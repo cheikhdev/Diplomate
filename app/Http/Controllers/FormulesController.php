@@ -12,9 +12,9 @@ use App\Product;
 use Paydunya\Checkout\Store;
 use Paydunya\Setup;
     Setup::setMasterKey(config('services.paydunya.master_key'));
-    Setup::setPublicKey(config('services.paydunya.prod_public_key'));
-    Setup::setPrivateKey(config("services.paydunya.prod_private_key"));
-    Setup::setToken(config("services.paydunya.prod_token"));
+    Setup::setPublicKey(config('services.paydunya.test_public_key'));
+    Setup::setPrivateKey(config("services.paydunya.test_private_key"));
+    Setup::setToken(config("services.paydunya.test_token"));
     Setup::setMode("services.paydunya.mode"); // Optionnel. Utilisez cette option pour les paiements tests.
     Store::setName(config('services.paydunya.company_name'));
 class FormulesController extends Controller
