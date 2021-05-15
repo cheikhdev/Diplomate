@@ -376,7 +376,7 @@ Version:1.0
 }
 .header.shop .logo {
 	float: left;
-	margin-top: 35px;
+	
 }
 .header.shop .top-contact {
 	margin-top:0px;
@@ -634,7 +634,7 @@ Version:1.0
 }
 .header.shop .logo {
 	float: left;
-	margin: 19px 0 0;
+	margin: 3px 0 0;
 }
 .header.shop .top-contact {
 	margin-top:0px;
@@ -5027,33 +5027,26 @@ button{
 }
 
 /* logo en mode mobile  */
-@media (min-width:576px) {
-	.img-logo{
-		width:80;
-		height: 30px;
-	}
-	.logo{
-		height:30px;
-		width: 80px;
-	}
-	
-}
 
-@media (min-width:768px) {
+@media (max-width:768px) {
 	.img-logo{
-		width:80;
-		height: 30px;
+		width:90;
+		height: 40px;
 	}
 	.logo{
-		height:30px;
-		width: 80px;
+		height:auto;
+		width: auto;
+	}
+	.cart-mobile{
+		display: flex;
+		justify-content: space-between;
 	}
 	
 }
 @media (min-width:992px) {
-	.img-logo{
-		width:200px;
-		height: 90px;
-	}
 	
+	.cart-mobile{
+		display: flex;
+		justify-content:end;
+	}
 }

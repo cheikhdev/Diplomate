@@ -150,16 +150,15 @@
 		<div class="middle-inner">
 			<div class="container">
 				<div class="row">
-					<div class="col-7 col-md-3">
+					<div class="col-4 col-md-3">
 						<!-- Logo -->
-						<div class="logo" style="margin-left:5px; margin-top:-15px;">
-							<a href="/home"><img src="{{asset('images/logo.jpg')}}" alt="logo" class="img-logo"></a>
+						<div class="logo" style="">
+							<a href="/"><img src="{{asset('images/logo.jpg')}}" alt="logo" class="img-logo" ></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form --->
 						
 						<!-- End Search Form -->
-						<div class="mobile-nav"></div>
 					</div>
 					<div class="col-3 col-md-6" style="">
 						<div class="search-bar-top w-100">
@@ -182,72 +181,67 @@
 							<!-- End Search Form -->
 						</div>
 					</div>
-					<div class="col-2 col-md-3 d-flex justify-content-end">
+					<div class="col-5 col-md-3 cart-mobile">
 						<div class="right-bar">
-							
 							<div class="sinlge-bar shopping">
-							
-							<div class="poper">
-			<a href="#" class="single-icon fixed" id="shopping"><i class="fas fa-shopping-cart fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i> 
-				<span class="total-count indice" id="indice_cart">{{Cart::count()}}</span>							
-			</a>
-		
-			<!-- Shopping Item -->
-			<div class="shopping-item w-auto" id="shopping-item">
-				<div class="dropdown-cart-header">
-					<span id="" class="indice">{{Cart::count()}} produit(s)</span>
-					
-					<a href="/panier">Afficher</a>
-					<form action="#">
-						<input type="hidden" id="indiceH" name="indice" class="indice" value="{{Cart::count()}}">
-					</form>
-				</div>
-			
-				<?php
-					//$indice = Cart::count();
-					//dd(Cart::content());
-				?>
-			 <div class="shop" id="shop_all">
-				<ul class="shopping-list">
-					<table id="myTable" class="table" style="overflow:hidden; width:100%;">
-					<tr>
-                                <th>Nom </th>
-                                <th>Qté</th>
-                                <th>Prix</th>
-                                <th>Delete</th>
-                     </tr>
-					@foreach(Cart::content() as $row)
-                          
-                           <tr> 
-                            <td class="nom"> {{$row->name}}</td>
-                           <td class="qty">  <span style="font-size: 20px;">{{$row->qty}}</span></td>
-                           <td class="prix"><span class="amount" style="font-size: 16px;">{{$row->price}} </span></td>
-                           <td class="">
-                           	<form action="{{route('cart.remove',$row->rowId)}}" method="GET" class="">
-                                @csrf                      
-                                @method('DELETE')
-                               <button class="bg-danger w-auto"><i class="fas fa-trash-alt"></i></a></button>
-                            </form></td></tr>
-                        
-					@endforeach
-				</table>
-				</ul>
-				<div class="bottom">
-					<div class="total">
-						<span>Total</span>
-						<span class="total-amount">{{Cart::total()}} FCFA</span>
-					</div>
-			 	</div>
-                 <div class="d-flex justify-content-center">
-					<button >Vider le pannier</button>
-				</div> 
-			</div>	
-				<div id="display_item"></div>
-		</div>	
-			
-							<!--/ End Shopping Item -->							
+								<div class="poper">
+									<a href="#" class="single-icon fixed" id="shopping"><i class="fas fa-shopping-cart fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i> 
+										<span class="total-count indice" id="indice_cart">{{Cart::count()}}</span>	
+									</a>
+										<!-- Shopping Item -->
+									<div class="shopping-item w-auto" id="shopping-item">
+										<div class="dropdown-cart-header">
+											<span id="" class="indice">{{Cart::count()}} produit(s)</span>
+											<a href="/panier">Afficher</a>
+											<form action="#">
+												<input type="hidden" id="indiceH" name="indice" class="indice" value="{{Cart::count()}}">
+											</form>
+										</div>
+										<div class="shop" id="shop_all">
+											<ul class="shopping-list">
+												<table id="myTable" class="table" style="overflow:hidden; width:100%;">
+													<tr>
+																<th>Nom </th>
+																<th>Qté</th>
+																<th>Prix</th>
+																<th>Delete</th>
+													</tr>
+													@foreach(Cart::content() as $row)
+														
+														<tr> 
+															<td class="nom"> {{$row->name}}</td>
+															<td class="qty">  <span style="font-size: 20px;">{{$row->qty}}</span></td>
+															<td class="prix"><span class="amount" style="font-size: 16px;">{{$row->price}} </span></td>
+															<td class="">
+																<form action="{{route('cart.remove',$row->rowId)}}" method="GET" class="">
+																	@csrf                      
+																	@method('DELETE')
+																<button class="bg-danger w-auto"><i class="fas fa-trash-alt"></i></a></button>
+																</form>
+															</td>
+														</tr>
+								
+													@endforeach
+												</table>
+											</ul>
+											<div class="bottom">
+												<div class="total">
+													<span>Total</span>
+													<span class="total-amount">{{Cart::total()}} FCFA</span>
+												</div>
+											</div>
+											<div class="d-flex justify-content-center">
+												<button >Vider le pannier</button>
+											</div> 
+										</div>	
+										<div id="display_item"></div>
+									</div>	
+				
+									<!--/ End Shopping Item -->							
+								</div>
 							</div>
 						</div>
+						<div class="mobile-nav" style="margin-top:15px;"></div>
 					</div>
 				</div>
 			</div>
