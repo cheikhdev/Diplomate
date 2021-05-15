@@ -153,7 +153,7 @@
 					<div class="col-7 col-md-3">
 						<!-- Logo -->
 						<div class="logo" style="margin-left:5px; margin-top:-15px;">
-							<a href="/home"><img src="{{asset('images/logo.jpg')}}" alt="logo"></a>
+							<a href="/home"><img src="{{asset('images/logo.jpg')}}" alt="logo" class="img-logo"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form --->

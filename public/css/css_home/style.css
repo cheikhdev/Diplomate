@@ -5025,3 +5025,26 @@ button{
 .update-disable:hover{
 	background:gray;
 }
+
+/* logo en mode mobile  */
+@media (min-width:576px) {
+	.img-logo{
+		width:100px;
+		height: 45px;
+	}
+	
+}
+
+@media (min-width:768px) {
+	.img-logo{
+		width:90px;
+		height: 45px;
+	}
+	
+}
+@media (min-width:992px) {
+	.img-logo{
+		width:200px;
+		height: 90px;
+	}
+}
