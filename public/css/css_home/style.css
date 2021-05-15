@@ -5029,16 +5029,24 @@ button{
 /* logo en mode mobile  */
 @media (min-width:576px) {
 	.img-logo{
-		width:100px;
-		height: 45px;
+		width:80;
+		height: 30px;
+	}
+	.logo{
+		height:30px;
+		width: 80px;
 	}
 	
 }
 
 @media (min-width:768px) {
 	.img-logo{
-		width:90px;
-		height: 45px;
+		width:80;
+		height: 30px;
+	}
+	.logo{
+		height:30px;
+		width: 80px;
 	}
 	
 }
@@ -5047,4 +5055,5 @@ button{
 		width:200px;
 		height: 90px;
 	}
+	
 }
