@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     //
-public function Product(){
+public function product(){
     return $this->hasMany("App\Product");
 }
 public function sous_category(){

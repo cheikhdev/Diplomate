@@ -10,7 +10,7 @@ class Contact extends Model
     
     public $fillable = ['nom','prenom','email','objet','message'];
 
-public function Contact(){
+public function contact(){
          return $this->belongsToMany("App\Contact");
 
      }

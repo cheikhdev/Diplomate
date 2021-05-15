@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="{{asset('css/css_home/bootstrap.css')}}">
 </head>
 <body>
-	<section class="d-flex justify-content-center p-5" >
-		<div style="width:60vw;" class="mat-login">
+	<section class="d-flex justify-content-center mt-5 mb-5" >
+		<div style="" class="mat-login">
 			<div class="card">
 				<div class="card-header">
 					<img src="images/embleme.PNG" alt="">
@@ -59,8 +59,10 @@
 									</a>
 								@endif
 							</div>
-									<button class="" style="border-radius:70px;width:150px;height:35px;size:12px;font-weight:bold;background:#191348;color:white;">Se Connecter</button>
+							<div class="">
+								<button class="" style="border-radius:70px;width:150px;height:35px;size:12px;font-weight:bold;background:#191348;color:white;">Se Connecter</button>
 								<button type="button" class="" data-dismiss="modal" style="border-radius:70px;width:150px;height:35px;size:12px;font-weight:bold;background:#BE1E2D;color:white;">Close</button>
+							</div>
 								
 						</form>
 					</div>
@@ -81,18 +83,21 @@
 	}
 
 	@media (min-width:768px) {
-		width:100%;
-		height:auto;
+		.mat-login{
+			width:100%;
+			height:auto;
+		}
 	}
 
 	@media (min-width:992px) {
-		width:60vw;
-		height:auto;
+		.mat-login{
+			width:60%;
+			height:auto;
+		}
 	}
 
 	@media (min-width:1200px) {
-		width:50vw;
-		height:auto;
+		
 	}
 
 </style>

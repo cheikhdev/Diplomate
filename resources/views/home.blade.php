@@ -2,12 +2,87 @@
 		
 
       @section('slide')
-     
+			<style>
+				
+				@media (min-width:576px) {
+					.hero-slider{
+						margin-left:5px;
+						margin-right:5px;
+						 margin-top:-2px;
+						 padding:5px;
+					}
+					.carousel-indicators{
+						
+					}
+					.carousel-item img{
+						height:100%;
+						width:100%;
+					}
+					.single-product{
+						height:100%;
+						width:100%;
+					}
+					.product-img img{
+						height:50%;
+						width:100%;
+					}
+				}
+
+				@media (min-width:768px) {
+					.hero-slider{
+						margin-left:5px;
+						margin-right:5px;
+						 margin-top:-2px;
+						 padding:5px;
+					}
+					.carousel-indicators{
+						
+					}
+					.carousel-item img{
+						height:100%;
+						width:100%;
+					}
+					.single-product{
+						height:100%;
+						width:100%;
+					}
+					.product-img img{
+						height:50%;
+						width:100%;
+					}
+				
+				}
+
+				@media (min-width:992px) {
+					.hero-slider{
+						margin-left:300px;
+						margin-right:100px;
+						 margin-top:-2px;
+						 padding:5px;
+					}
+					.carousel-indicators{
+						left:-18%;
+					}
+					.carousel-item img{
+						height:50vh;
+						width:80%;
+					}
+					.single-product{
+						height:300px;
+						width:300px;
+					}
+					.product-img img{
+						height:150px;
+						width:300px;
+					}
+				}
+
+			</style>
 		<!-- Slider Area -->
-        <section class="hero-slider" style="margin-left:300px;margin-right:100px; margin-top:-2px;padding:5px;">
+        <section class="hero-slider" >
         <!-- Single Slider -->
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators" style="left: -18%;">
+                    <ol class="carousel-indicators">
                   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                   <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                   <li data-target="#carousel-example-generic" data-slide-to="2"></li>
@@ -16,7 +91,7 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active mr-3">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel3.jpg')}}" style="height:50vh; width:80%;" alt="">
+                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel3.jpg')}}" style="" alt="">
                     <div class="container">
                       <div class="carousel-caption d-none d-md-block"  style="left: -3%;">
                         <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
@@ -25,7 +100,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel2.jpg')}}" style="height:50vh; width:80%;" alt="">
+                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel2.jpg')}}" style="" alt="">
                     <div class="container">
                       <div class="carousel-caption d-none d-md-block" style="left:-3%;">
                         <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
@@ -34,7 +109,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/construction-material.jpeg')}}" alt="" style="height:50vh; width:80%;">
+                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/construction-material.jpeg')}}" alt="" style="">
                     <div class="container">
                       <div class="carousel-caption d-none d-md-block" style="left: -3%;">
                         <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
@@ -43,7 +118,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/robinetcuisine.jpg')}}" alt="" style="height:50vh; width:80%;">
+                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/robinetcuisine.jpg')}}" alt="" style="">
                     <div class="container">
                       <div class="carousel-caption d-none d-md-block"  style="left: -3%;">
                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
@@ -53,7 +128,7 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel1.jpg')}}" alt="" style="height:50vh; width:80%;">
+                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel1.jpg')}}" alt="" style="">
                     <div class="container">
                       <div class="carousel-caption d-none d-md-block" style="left: -3%;">
                         <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
@@ -78,7 +153,7 @@
 		@endsection
 		
 		@section('content')
-            <div class="row"style="margin:20px; width: 100%; height: auto;">
+            <div class="row" style="margin:10px; width: 100%; height: auto;">
              	<!-- Start Shop Home List  -->
 				<section class="shop-home-list section w-100">
 					<div class="container">
@@ -96,6 +171,7 @@
 										<div class="owl-carousel popular-slider" style="padding:1px;">
 											<!-- Start Single Product -->
 											@foreach($products as $product)
+												@if($product->category->name_category == "maçonnerie")
 												<div class="single-list mr-3 bg-white">
 													<div class="row">
 														<div class="col-lg-6 col-md-6 col-12">
@@ -127,6 +203,7 @@
 														</div>
 													</div>
 												</div>
+												@endif
 												
 											@endforeach
 											<!-- End Single Product -->
@@ -261,14 +338,16 @@
 															<div class="tab-pane fade active  show" id="man" role="tabpanel">
 																<div class="tab-single">
 																	<div class="row">
-																		<div class="col-12">
-																			<div class="owl-carousel popular-slider" style="padding:5px;">
+																	<div class="owl-carousel popular-slider" style="padding:5px;">
+																	@foreach($products as $product)
+																		<div class="col-sm-12 col-md-4">
+																			
 																				<!-- Start Single Product -->
-																@foreach($products as $product)
-																<div class="single-product p-3" style="width:300px;height:300px;">
+																
+																<div class="single-product p-3" style="">
 																						<div class="product-img">
 																							<a href="product-details.html">
-																								<img class="default-img" style="width:300px;height:150px;" src="{{$product->image_product ? asset($product->image_product) : asset('uploads/images/default.png')}}" alt="#">
+																								<img class="default-img" style="" src="{{$product->image_product ? asset($product->image_product) : asset('uploads/images/default.png')}}" alt="#">
 																								<img class="hover-img" src="{{$product->image_product ? asset($product->image_product) : asset('uploads/images/default.png')}}" alt="#">
 																							</a>
 																							<div class="button-head">
@@ -281,7 +360,7 @@
 																									<form action="{{route('cart.store')}}" method="POST"  class="add-to-cart">
 																										@csrf
 																										<input type="hidden" id="indice" name="" value="{{Cart::count()}}">
-																										<input type="hidden" name="quantite" value="1">																				<input type="hidden" name="id" value="{{\Illuminate\Support\Facades\Auth::id()}}">
+																										<input type="hidden" name="quantite" value="1">	<input type="hidden" name="id" value="{{\Illuminate\Support\Facades\Auth::id()}}">
 																										<input type="hidden" name="product_id" value="{{$product->id}}">
 																										<input type="hidden" name="prix_product" value="{{$product->prix_product}}">
 																										<button type="submit" class="buy">
@@ -299,9 +378,11 @@
 																							</div>
 																						</div>
 																					</div>
-																				@endforeach
+																				
 																				<!-- End Single Product -->
 																			</div>
+																		
+																		@endforeach
 																		</div>
 																	</div>
 																</div>

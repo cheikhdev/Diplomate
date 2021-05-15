@@ -74,7 +74,7 @@
               <div class="col-sm-12 col-md-6" style="height:auto "> 
                   <div class="h-100 show-info" >
                     <div class="" >
-                      <h6 class="">  <span class="" style="font-weight: bold;">{{$product->Category->name_category ?? ""}}/{{$product->sous_category->name ?? ""}}<span>
+                      <h6 class="">  <span class="" style="font-weight: bold;">{{$product->category->name_category ?? ""}}/{{$product->sous_category->name ?? ""}}<span>
                       </h6>
                     </div>
                     <div style="margin-top:-5px im !important;">

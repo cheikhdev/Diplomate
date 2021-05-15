@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Administrator extends Model
 {
     //
-    public function Product(){
+    public function product(){
        return $this ->hasMany("App\Product");
     }
-    public function Order(){
+    public function order(){
         return $this ->hasMany("App\Order");
     }
     public function user(){

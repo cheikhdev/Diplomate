@@ -5,7 +5,7 @@
     <h4 style="font-size: 24px;border: 1px solid black;text-align: center;color: #FFD700">{{session('success')}}</h6>
   @endif
 
-        <div id="show_pannier" class="ml-5 mr-5" style="margin-top:25px;padding:5px;">
+        <div id="show_pannier" class="" style="margin-top:25px;padding:5px;">
 
 <!-- Page Heading -->
             <!-- DataTales Example -->

@@ -8,7 +8,7 @@ class Property extends Model
 {
     //
     public $guarded = [];
-    public function Product(){
+    public function product(){
     return $this->hasMany("App\Product");
 }
 

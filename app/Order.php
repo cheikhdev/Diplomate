@@ -8,10 +8,10 @@ class Order extends Model
 {
     //
     protected $guarded = [];
-    public function Delivery(){
+    public function delivery(){
         return $this->belongsTo("App\Delivery");
     }
-     public function Administrator(){
+     public function administrator(){
           return $this->belongsTo("App\Administrator");
      }
      public Function product(){

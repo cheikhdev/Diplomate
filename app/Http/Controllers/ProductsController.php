@@ -180,7 +180,7 @@ public function pagecategory(){
        $categories= Category::where('name_category',$name)->first();      
       if(empty($categories))
          {
-            $category->name_category=$name; 
+            $category->name_category=strtolower($name); 
             $category->save();
             return redirect('/affiche_categorie')->with('success', 'Categorie ajoutée avec succès !!');
          }
@@ -198,7 +198,7 @@ public function pagecategory(){
       if(empty($sous_categories))
          {
             //$category= Category::where('name_category',$request->input())
-            $sous_category->name=$name;
+            $sous_category->name=strtolower($name);
             $sous_category->category_id=$request->input('id_category');
             $sous_category->save();
             return redirect('/affiche_sous_categorie')->with('success', 'Sous Categorie ajoutée avec succès !!');

@@ -84,9 +84,9 @@
 		<div class="topbar">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 col-md-12 col-12">
+					<div class="col-md-4  col-12">
 						<!-- Top Left -->
-						<div class="">
+						<div class="d-flex justify-content-start">
 							<ul class="list-main">		
 								<li><a href="#" > <i class="fas fa-envelope fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>support@matcosen.com</a></li>
         						<li><a href="{{url('https://wa.me/221774781907')}}" target="_blank" class="text-success"><i class="fab fa-whatsapp text-success"></i>77 478 19 07</a></li>
@@ -94,7 +94,8 @@
 						</div>
 						<!--/ End Top Left -->
 					</div>
-					<div class="col-lg-8 col-md-12 col-12">
+					<hr style="height:2px;background:gray;">
+					<div class="col-md-8  col-12">
 						<!-- Top Right -->
 						<div class="right-content d-flex justify-content-end">
 							<ul class="list-main">
@@ -111,7 +112,7 @@
 										<li class="nav-item dropdown no-arrow">
 											<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												@can('user')
-													<h4 class="mr-2 d-none d-lg-inline text-gray-600 ">{{Auth::user()->client->prenom_client }} {{Auth::user()->client->nom_client}}</h4>
+													<h4 class="mr-2 d-none d-lg-inline text-gray-600 ">{{Auth::user()->client->nom_client }}</h4>
 												@endcan
 											</a>
 											<!-- Dropdown - User Information -->
@@ -149,28 +150,18 @@
 		<div class="middle-inner">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3 col-md-3 col-12">
+					<div class="col-7 col-md-3">
 						<!-- Logo -->
 						<div class="logo" style="margin-left:5px; margin-top:-15px;">
 							<a href="/home"><img src="{{asset('images/logo.jpg')}}" alt="logo"></a>
 						</div>
 						<!--/ End Logo -->
 						<!-- Search Form --->
-						<div class="search-top">
-							<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
-							<!-- Search Form -->
-							<div class="search-top">
-								<form class="search-form">
-									<input type="text" placeholder="Recherche de produits...." name="search">
-									<button value="search" type="submit"><i class="fas fa-search"></i></button>
-								</form>
-							</div>
-							<!-- End Search Form -->
-						</div>
+						
 						<!-- End Search Form -->
 						<div class="mobile-nav"></div>
 					</div>
-					<div class="col-lg-7 col-md-7 col-12" style="">
+					<div class="col-3 col-md-6" style="">
 						<div class="search-bar-top w-100">
 							<div class="search-bar w-100">
 								<form action="{{route('products.search')}}" class="w-100">
@@ -179,8 +170,19 @@
 								</form>
 							</div>
 						</div>
+						<div class="search-top">
+							<div class="top-search mt-3"><a href="#0"><i class="fas fa-search"></i></a></div>
+							<!-- Search Form -->
+							<div class="search-top" >
+								<form class="search-form" action="{{route('products.search')}}">
+									<input type="text" placeholder="Recherche de produits...." name="q" value="{{ request()->q ?? '' }}">
+									<a href="{{('partials.search')}}" class="w-20"><button class="btnn"><i class="fas fa-search"></i></button></a>
+								</form>
+							</div>
+							<!-- End Search Form -->
+						</div>
 					</div>
-					<div class="col-lg-2 col-md-2 col-12">
+					<div class="col-2 col-md-3 d-flex justify-content-end">
 						<div class="right-bar">
 							
 							<div class="sinlge-bar shopping">
@@ -251,15 +253,15 @@
 			</div>
 		</div>
 		@if (request()->input('q'))
-			<div class="row align-items-center justify-content-center">
+			<div class="mt-5 row align-items-center justify-content-center">
 				<h4 class="alert alert-danger " style=" font-size: 16px; width: 60%; text-align: center;color: #FFFFFF;">{{ $products->total() }} résultat(s) pour la recherche "{{ request()->q }}"</h4>
 			</div>
 		@endif
 		@if (session('success_info'))
-    		<div class="alert alert-success">{{session('success_info')}}</div>
+    		<div class=" mt-5 alert alert-success">{{session('success_info')}}</div>
   		@endif
 		@if (session('danger_info'))
-    		<div class="alert alert-danger">{{session('danger_info')}}</div>
+    		<div class="mt-5 alert alert-danger">{{session('danger_info')}}</div>
   		@endif
 		<!-- Header Inner -->
 		<div class="header-inner" style=" ">

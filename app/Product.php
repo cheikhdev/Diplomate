@@ -8,20 +8,20 @@ class Product extends Model
 {
     //
     protected $guarded = [];
-    public function Category(){
+    public function category(){
         return $this ->belongsTo('App\Category');
     }
     public function sous_category(){
         return $this ->belongsTo('App\Sous_Category');
     }
-    public function Property(){
+    public function property(){
         return $this ->belongsTo('App\Property');
     }
    
-    public function Administrator(){
+    public function administrator(){
         return $this ->belongsTo('App\Administrator');
    }
-   public function Order(){
+   public function order(){
         return $this ->belongsToMany('App\Order');
    }
   
