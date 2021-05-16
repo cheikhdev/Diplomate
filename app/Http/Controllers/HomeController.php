@@ -104,8 +104,7 @@ public function gravier(){
 
      public function deconnect(){
          Auth::logout();
-         $products = Product::all()->take(15);
-         return view('home', compact('products'));
+         return redirect('/');
   }
 
    public function contact() {

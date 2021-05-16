@@ -85,10 +85,8 @@ public function pagecategory(){
   
   }
     public function index(){
-      $products = Product::orderBy('created_at')->get();
-      $products = \App\Product::orderBy('created_at', 'DESC')->get();
-
-      return view('products.index', compact('products'));
+      $products = Product::all();
+      return view('home', compact('products'));
    }
    public function vendeur1(){
       $property = Category::orderBy('created_at')->get();

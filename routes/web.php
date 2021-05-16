@@ -54,8 +54,8 @@ Route::get('/createSous-Category', "ProductsController@add_souscategory")->middl
 
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('products.index');
-Route::get('/', 'HomeController@deconnect')->name('deconnect');
+Route::get('/', 'ProductsController@index')->name('products.index');
+Route::get('/deconnect', 'HomeController@deconnect')->name('deconnect');
 
 
 Route::get('/espace_client', 'HomeController@utilisateur')->name('espace_client')->middleware('auth');

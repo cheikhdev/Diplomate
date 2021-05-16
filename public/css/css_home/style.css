@@ -5043,10 +5043,16 @@ button{
 	}
 	
 }
-@media (min-width:992px) {
+@media (max-width:992px) {
 	
 	.cart-mobile{
 		display: flex;
 		justify-content:end;
+	}
+	.logo img{
+		height:50px;
+	}
+	.logo {
+		height:50px;
 	}
 }

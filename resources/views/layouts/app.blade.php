@@ -152,7 +152,7 @@
 				<div class="row">
 					<div class="col-4 col-md-3">
 						<!-- Logo -->
-						<div class="logo" style="">
+						<div class="logo" style="height:50px;">
 							<a href="/"><img src="{{asset('images/logo.jpg')}}" alt="logo" class="img-logo" ></a>
 						</div>
 						<!--/ End Logo -->
@@ -311,7 +311,7 @@
 										<div class="nav-inner" id="bare">	
 											<ul class="nav main-menu menu navbar-nav" id="" style="font-size:16px;">
 												
-													<li id="acceuil" class=""><a href="{{url('/home')}}" style="">acceuil</a></li>
+													<li id="acceuil" class=""><a href="{{url('/')}}" style="">acceuil</a></li>
 													<li id="propos" class=""><a href="{{url('/apropos')}}" class="">A propos<i class="fas fa-angle-down"></i></a>
 														<ul class="dropdown">
 															<li><a href="shop-grid.html">Mention légale</a></li>
