@@ -59,9 +59,9 @@
 									</a>
 								@endif
 							</div>
-							<div class="">
-								<button class="" style="border-radius:70px;width:150px;height:35px;size:12px;font-weight:bold;background:#191348;color:white;">Se Connecter</button>
-								<button type="button" class="" data-dismiss="modal" style="border-radius:70px;width:150px;height:35px;size:12px;font-weight:bold;background:#BE1E2D;color:white;">Close</button>
+							<div class="d-flex justify-content-between">
+								<button class="pl-3 pr-3" style="border-radius:70px;width:auto;height:auto;size:12px;font-weight:bold;background:#191348;color:white;">Se Connecter</button>
+								<button type="button" class="pl-3 pr-3" data-dismiss="modal" style="border-radius:70px;width:auto;height:auto;size:12px;font-weight:bold;background:#BE1E2D;color:white;">Close</button>
 							</div>
 								
 						</form>
@@ -86,6 +86,10 @@
 		.mat-login{
 			width:100%;
 			height:auto;
+		}
+		section{
+			margin-left:10px;
+			margin-right:10px;
 		}
 	}
 
