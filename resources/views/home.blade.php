@@ -91,36 +91,36 @@
                 </ol>
                 <div class="carousel-inner">
                   <div class="carousel-item active mr-3">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel3.jpg')}}" style="" alt="">
+                    <img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel3.jpg')}}" style="" alt="">
                     <div class="container">
-                      <div class="carousel-caption d-none d-md-block"  style="left: -3%;">
+                      <div class="carousel-caption  d-md-block"  style="left: -3%;">
                         <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
                         <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
                       </div>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel2.jpg')}}" style="" alt="">
+                    <img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel2.jpg')}}" style="" alt="">
                     <div class="container">
-                      <div class="carousel-caption d-none d-md-block" style="left:-3%;">
+                      <div class="carousel-caption  d-md-block" style="left:-3%;">
                         <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
                         <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
                       </div>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/construction-material.jpeg')}}" alt="" style="">
+                    <img class="second-slide animated zoomInDown d-md-block" src="{{asset('images/construction-material.jpeg')}}" alt="" style="">
                     <div class="container">
-                      <div class="carousel-caption d-none d-md-block" style="left: -3%;">
+                      <div class="carousel-caption  d-md-block" style="left: -3%;">
                         <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
                         <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
                       </div>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/robinetcuisine.jpg')}}" alt="" style="">
+                    <img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/robinetcuisine.jpg')}}" alt="" style="">
                     <div class="container">
-                      <div class="carousel-caption d-none d-md-block"  style="left: -3%;">
+                      <div class="carousel-caption  d-md-block"  style="left: -3%;">
                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
                         <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
                         
@@ -128,9 +128,9 @@
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel1.jpg')}}" alt="" style="">
+                    <img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel1.jpg')}}" alt="" style="">
                     <div class="container">
-                      <div class="carousel-caption d-none d-md-block" style="left: -3%;">
+                      <div class="carousel-caption  d-md-block" style="left: -3%;">
                         <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
                         <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
                         

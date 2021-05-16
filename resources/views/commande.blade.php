@@ -52,13 +52,13 @@
         
                             @media (min-width:576px) {
                                 h4{
-                                    size:12px;
+                                    size:12px !important;
                                 }
                             }
 
                             @media (min-width:768px) {
                                 h4{
-                                    size:12px;
+                                    size:12px !important;
                                 }
                             }
                             }

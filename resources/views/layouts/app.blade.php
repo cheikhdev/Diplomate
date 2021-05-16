@@ -112,7 +112,7 @@
 										<li class="nav-item dropdown no-arrow">
 											<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												@can('user')
-													<h4 class="mr-2 d-none d-lg-inline text-gray-600 ">{{Auth::user()->client->nom_client }}</h4>
+													<h4 class="mr-2 d-lg-inline text-gray-600 ">{{Auth::user()->client->nom_client }}</h4>
 												@endcan
 											</a>
 											<!-- Dropdown - User Information -->
@@ -150,8 +150,9 @@
 		<div class="middle-inner">
 			<div class="container">
 				<div class="row">
-					<div class="col-4 col-md-3">
+					<div class="col-7 col-md-3 cart-mobile">
 						<!-- Logo -->
+						<div class="mobile-nav" style="margin-top:15px;"></div>
 						<div class="logo" style="height:50px;">
 							<a href="/"><img src="{{asset('images/logo.jpg')}}" alt="logo" class="img-logo" ></a>
 						</div>
@@ -160,8 +161,8 @@
 						
 						<!-- End Search Form -->
 					</div>
-					<div class="col-3 col-md-6" style="">
-						<div class="search-bar-top w-100">
+					<div class="col-2 col-md-6 " style="">
+						<div class="search-bar-top w-100 ">
 							<div class="search-bar w-100">
 								<form action="{{route('products.search')}}" class="w-100">
 									<input type="text" name="q" class="form-control " placeholder="Recherche de Produits" value="{{ request()->q ?? '' }}" style="width:90%;">
@@ -169,7 +170,7 @@
 								</form>
 							</div>
 						</div>
-						<div class="search-top">
+						<div class="search-top  rechercher">
 							<div class="top-search mt-3"><a href="#0"><i class="fas fa-search"></i></a></div>
 							<!-- Search Form -->
 							<div class="search-top" >
@@ -181,7 +182,7 @@
 							<!-- End Search Form -->
 						</div>
 					</div>
-					<div class="col-5 col-md-3 cart-mobile">
+					<div class="col-3 col-md-3 ">
 						<div class="right-bar">
 							<div class="sinlge-bar shopping">
 								<div class="poper">
@@ -241,7 +242,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="mobile-nav" style="margin-top:15px;"></div>
+						
 					</div>
 				</div>
 			</div>
