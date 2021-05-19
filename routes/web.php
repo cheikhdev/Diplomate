@@ -88,19 +88,23 @@ Route::get('/Sanitaire', "HomeController@sanitaire");
 Route::get('/Peinture', "HomeController@peinture");
 Route::get('/Electricite', "HomeController@electricite");
 //ROUTE POUR LES SOUS-CATEGORIES MACONNERIE
-Route::get('/ciment', "HomeController@ciment");
-Route::get('/fer', "HomeController@fer");
-Route::get('/gravier', "HomeController@gravier");
+Route::get('/maçonnerie/ciment', "HomeController@ciment");
+Route::get('/maçonnerie/fer', "HomeController@fer");
+Route::get('/maçonnerie/gravier', "HomeController@gravier");
 //ROUTE POUR LES SOUS-CATEGORIES PEINTURE
-Route::get('/pinceau', "HomeController@pinceau");
+Route::get('/peinture/pinceau', "HomeController@pinceau");
 //Route::get('/fer', "HomeController@fer");
 //Route::get('/gravier', "HomeController@gravier");
 //ROUTE POUR LES SOUS-CATEGORIES SANITAIRE
-Route::get('/salle_bain', "HomeController@salle_bain");
-Route::get('/cuisiniere', "HomeController@cuisinere");
+Route::get('/plomberie/salle_bain', "HomeController@salle_bain");
+Route::get('/plomberie/robineterie', "HomeController@robineterie");
 
+//ROUTE POUR LES SOUS-CATEGORIES ELECTRICITE
 
-
+Route::get('/electricite/cablage', "HomeController@cablage");
+Route::get('/electricite/eclairage', "HomeController@eclairage");
+Route::get('/electricite/appareillage', "HomeController@appareillage");
+Route::get('/electricite/protection', "HomeController@protection");
 
 //Route::get('/elec', "ProductsController@elec");
 //Route::get('/acc', "ProductsController@acc");

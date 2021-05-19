@@ -1,127 +1,157 @@
 
 @extends('layouts.app')
-      @section('connect')
-        <li><a href="#" data-toggle="modal" data-target="#myModal"> <i class="fas fa-sign-in-alt fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>Inscription</a></li>
-        <li><a href="login.html#" data-toggle="modal" data-target="#ModalLogin"> <i class="fas fa-user-lock fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>Connexion</a></li>
-      @endsection
+    
 
-    @section('indice_cart')
-      <a href="#" class="single-icon fixed" id="shopping"><i class="fas fa-shopping-cart fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i> 
-        <span class="total-count indice" id="indice_cart">{{Cart::count()}}</span>              
-      </a>
-                <!-- Shopping Item -->
-      <div class="shopping-item">
-        <div class="dropdown-cart-header">
-          <span class="indice">{{Cart::count()}} produit(s)</span>
-          <a href="/panier">Afficher le Panier</a>
-          <form action="#">
-            <input type="hidden" id="indiceH" name="indice" class="indice" value="{{Cart::count()}}">
-          </form>
-        </div>
-        <?php
-          //$indice = Cart::count();
-          //dd(Cart::content());
-        ?>
-        <ul class="shopping-list" >
-          @foreach(Cart::content() as $row)
-                        <li>
-                            <form action="{{route('cart.destroy',$row->rowId)}}" method="POST" class="">
-                                @csrf                      
-                                @method('DELETE')
-                                <button type="submit" class="remove text-danger  " title="Remove this item"><i class="fa fa-remove "></i></button>
-                            </form>
-                            <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
-                            <h4><a href="#">{{$row->name}}</a></h4>
-                            <p class="quantity">(Quantité : {{$row->qty}}) ==> <span class="amount">{{$row->price}} FCFA</span></p>
-                        </li>
-          @endforeach
-        </ul>
-        <div class="bottom">
-          <div class="total">
-            <span>Total</span>
-            <span class="total-amount">{{Cart::total()}} FCFA</span>
-          </div>
-          <a href="{{('/panier')}}" class="btn animate">Voir le panier</a>
-        </div>
-      </div>
-      <!--/ End Shopping Item -->             
-    @endsection
+@section('slide')
+			<style>
+				
+				@media (min-width:576px) {
+					.hero-slider{
+						margin-left:5px;
+						margin-right:5px;
+						 margin-top:-2px;
+						 padding:5px;
+					}
+					.carousel-indicators{
+						
+					}
+					.carousel-item img{
+						height:100%;
+						width:100%;
+					}
+					.single-product{
+						height:100%;
+						width:100%;
+					}
+					.product-img img{
+						height:50%;
+						width:100%;
+					}
+				}
 
-      @section('slide')
-     
-    <!-- Slider Area -->
-        <section class="hero-slider" style="margin-left:300px;margin-right:100px; margin-top:-2px;padding:5px;">
-        <!-- Single Slider -->
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators" style="left: -18%;">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active mr-3">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel3.jpg')}}" style="height:50vh; width:80%;" alt="">
-                    <div class="container">
-                      <div class="carousel-caption d-none d-md-block"  style="left: -3%;">
-                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel2.jpg')}}" style="height:50vh; width:80%;" alt="">
-                    <div class="container">
-                      <div class="carousel-caption d-none d-md-block" style="left:-3%;">
-                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/construction-material.jpeg')}}" alt="" style="height:50vh; width:80%;">
-                    <div class="container">
-                      <div class="carousel-caption d-none d-md-block" style="left: -3%;">
-                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/robinetcuisine.jpg')}}" alt="" style="height:50vh; width:80%;">
-                    <div class="container">
-                      <div class="carousel-caption d-none d-md-block"  style="left: -3%;">
-                       <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-none d-md-block" src="{{asset('images/materiel1.jpg')}}" alt="" style="height:50vh; width:80%;">
-                    <div class="container">
-                      <div class="carousel-caption d-none d-md-block" style="left: -3%;">
-                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-              </div>
-      <!--/ End Single Slider -->
-          </section>
+				@media (min-width:768px) {
+					.hero-slider{
+						margin-left:5px;
+						margin-right:5px;
+						 margin-top:-2px;
+						 padding:5px;
+					}
+					.carousel-indicators{
+						
+					}
+					.carousel-item img{
+						height:100%;
+						width:100%;
+					}
+					.single-product{
+						height:100%;
+						width:100%;
+					}
+					.product-img img{
+						height:50%;
+						width:100%;
+					}
+				
+				}
+
+				@media (min-width:992px) {
+					.hero-slider{
+						margin-left:300px;
+						margin-right:100px;
+						 margin-top:-2px;
+						 padding:5px;
+					}
+					.carousel-indicators{
+						left:-18%;
+					}
+					.carousel-item img{
+						height:50vh;
+						width:80%;
+					}
+					.single-product{
+						height:300px;
+						width:300px;
+					}
+					.product-img img{
+						height:150px;
+						width:300px;
+					}
+				}
+
+			</style>
+		<!-- Slider Area -->
+			<section class="hero-slider" >
+				<!-- Single Slider -->
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+					</ol>
+					<div class="carousel-inner">
+					<div class="carousel-item active mr-3">
+						<img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel3.jpg')}}" style="" alt="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block"  style="left: -3%;">
+							<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+						</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel2.jpg')}}" style="" alt="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block" style="left:-3%;">
+							<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+						</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img class="second-slide animated zoomInDown d-md-block" src="{{asset('images/construction-material.jpeg')}}" alt="" style="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block" style="left: -3%;">
+							<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+						</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/robinetcuisine.jpg')}}" alt="" style="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block"  style="left: -3%;">
+						<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+							
+						</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel1.jpg')}}" alt="" style="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block" style="left: -3%;">
+							<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+							
+						</div>
+						</div>
+					</div>
+					</div>
+					<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!--/ End Single Slider -->
+			</section>
         <!--/ End Slider Area -->
-    @endsection
+		@endsection
     
     @section('content')
             <div class="row"style="margin:20px; width: 100%; height: auto;">

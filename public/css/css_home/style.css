@@ -5048,6 +5048,10 @@ button{
 	.hero-slider{
 		margin:10px;
 	}
+	.modal-dialog{
+		width:100% !important
+	}
+
 }
 @media (max-width:768px) {
 	.img-logo{
@@ -5069,6 +5073,9 @@ button{
 	}
 	.hero-slider{
 		margin:10px;
+	}
+	.modal-dialog{
+		width:100% !important
 	}
 }
 @media (min-width:992px) {

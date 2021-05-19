@@ -63,6 +63,16 @@
 		.btnedit:hover{
 			background-color:;
 		}
+		.redirect-login{
+			
+			color:#191348 !important;
+			text-decoration:underline !important;
+		}
+		.redirect-login:hover{
+			color:#BE1E2D !important;
+			
+			text-decoration:underline !important;
+		}
 	</style>
 	
 	
@@ -269,21 +279,21 @@
 								<ul class="main-category">
 									<li><a href="/Maconnerie">Maçonnerie<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 										<ul class="sub-category" style="z-index:9999 ;">
-											<li><a href="/ciment">Ciment</a></li>
-											<li><a href="/fer">Fer</a></li>
-											<li><a href="/gravier">Graviers</a></li>
+											<li><a href="/maçonnerie/ciment">Ciment</a></li>
+											<li><a href="/maçonnerie/fer">Fer</a></li>
+											<li><a href="/maçonnerie/gravier">Graviers</a></li>
 										</ul>
 									</li>
 									<li><a href="/Sanitaire">Sanitaire et Plomberie<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 										<ul class="sub-category" style="z-index:9999 ;">
-											<li><a href="#">Salle de bain</a></li>
-											<li><a href="#">Robinetrie</a></li>
+											<li><a href="/plomberie/salle_bain">Salle de bain</a></li>
+											<li><a href="/plomberie/robineterie">Robinetrie</a></li>
 											
 										</ul>
 									</li>
 									<li><a href="/Peinture">Peinture<i class="fa fa-angle-right" aria-hidden="true"></i></a>
 										<ul class="sub-category" style="z-index:9999 ;">
-											<li><a href="#">Pinceau</a></li>
+											<li><a href="/peinture/pinceau">Pinceau</a></li>
 											<li><a href="#">.............</a></li>
 											<li><a href="#">..............</a></li>
 											<li><a href="#">..............</a></li>
@@ -291,10 +301,10 @@
 									</li>
 									<li><a href="/Electricite">Electricité <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 										<ul class="sub-category" style="z-index:9999 ;">
-											<li><a href="search?q=Eclairages">Eclairage</a></li>
-											<li><a href="search?q=Cablages">Cablage</a></li>
-											<li><a href="search?q=Appareillage">Appareillage</a></li>
-											<li><a href="search?q=Protection">Protection</a></li>
+											<li><a href="/electricite/eclairage">Eclairage</a></li>
+											<li><a href="/electricite/cablage">Cablage</a></li>
+											<li><a href="/electricite/appareillage">Appareillage</a></li>
+											<li><a href="/electricite/protection">Protection</a></li>
 											
 										</ul>
 									</li>
@@ -510,7 +520,11 @@
 												<button type="reset" style="width:150px;border-radius:50px;height:30px !important;background:#BE1E2D;" class="" data-dismiss="modal">Annuler</button>
 											</div>
 										</form>
-				</div>
+
+										<div class="d-flex justify-content-center">
+											<a href="/login" class="redirect-login" style="">  Connecter à mon compte</a>
+										</div>
+					</div>
 				
 				</div>
 			</div>

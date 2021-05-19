@@ -1,7 +1,7 @@
 @extends('layouts.app')
 		
 
-      @section('slide')
+      	@section('slide')
 			<style>
 				
 				@media (min-width:576px) {
@@ -79,76 +79,76 @@
 
 			</style>
 		<!-- Slider Area -->
-        <section class="hero-slider" >
-        <!-- Single Slider -->
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active mr-3">
-                    <img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel3.jpg')}}" style="" alt="">
-                    <div class="container">
-                      <div class="carousel-caption  d-md-block"  style="left: -3%;">
-                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel2.jpg')}}" style="" alt="">
-                    <div class="container">
-                      <div class="carousel-caption  d-md-block" style="left:-3%;">
-                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown d-md-block" src="{{asset('images/construction-material.jpeg')}}" alt="" style="">
-                    <div class="container">
-                      <div class="carousel-caption  d-md-block" style="left: -3%;">
-                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/robinetcuisine.jpg')}}" alt="" style="">
-                    <div class="container">
-                      <div class="carousel-caption  d-md-block"  style="left: -3%;">
-                       <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel1.jpg')}}" alt="" style="">
-                    <div class="container">
-                      <div class="carousel-caption  d-md-block" style="left: -3%;">
-                        <h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
-                        <p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-              </div>
-			<!--/ End Single Slider -->
-          </section>
+			<section class="hero-slider" >
+				<!-- Single Slider -->
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
+					</ol>
+					<div class="carousel-inner">
+					<div class="carousel-item active mr-3">
+						<img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel3.jpg')}}" style="" alt="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block"  style="left: -3%;">
+							<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+						</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel2.jpg')}}" style="" alt="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block" style="left:-3%;">
+							<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+						</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img class="second-slide animated zoomInDown d-md-block" src="{{asset('images/construction-material.jpeg')}}" alt="" style="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block" style="left: -3%;">
+							<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+						</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/robinetcuisine.jpg')}}" alt="" style="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block"  style="left: -3%;">
+						<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+							
+						</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img class="second-slide animated zoomInDown  d-md-block" src="{{asset('images/materiel1.jpg')}}" alt="" style="">
+						<div class="container">
+						<div class="carousel-caption  d-md-block" style="left: -3%;">
+							<h1 class="animated fadeInDown" style="color: #ffffff;">Matcosen Equipement.</h1>
+							<p class="animated fadeInRight" style="color: #ffffff;">MATCOSEN .</p>
+							
+						</div>
+						</div>
+					</div>
+					</div>
+					<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+				<!--/ End Single Slider -->
+			</section>
         <!--/ End Slider Area -->
 		@endsection
 		

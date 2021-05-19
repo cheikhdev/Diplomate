@@ -19,13 +19,13 @@ class HomeController extends Controller
         //$this->middleware('auth');
     }
     // Liste des Sous-Categories Maconnerie
-     public function ciment(){
-     $ciment = Product::where('name_product', 'like', "%ciment%")
-                
-                ->paginate(6);
-     $product = \App\Product::All();
-    return view('sous-categories.ciment', compact('product','ciment'));
-}
+    public function ciment(){
+      $ciment = Product::where('name_product', 'like', "%ciment%")
+                  
+                  ->paginate(6);
+      $product = \App\Product::All();
+      return view('sous-categories.ciment', compact('product','ciment'));
+    }
      public function fer(){
      $fer = Product::where('name_product', 'like', "%fer%")
                 
@@ -55,9 +55,51 @@ public function gravier(){
                 ->paginate(6);
      $product = \App\Product::All();
     return view('sous-categories.salle_bain', compact('product','salle_bain'));
-}
-     
-    
+    }
+    public function robineterie(){
+      $robineterie = Product::where('name_product', 'like', "%robineterie%")
+                 
+                 ->paginate(6);
+      $product = \App\Product::All();
+     return view('sous-categories.robineteri', compact('product','robineterie'));
+ }
+  
+  // Liste des Sous-Categories Electricité
+  public function eclairage(){
+    $eclairage = Product::where('name_product', 'like', "%eclairage%")
+               
+               ->paginate(6);
+    $product = \App\Product::All();
+    return view('sous-categories.eclairage', compact('product','eclairage'));
+  }
+
+  // Liste des Sous-Categories Sanitaires et Plomberies
+  public function cablage(){
+    $cablage = Product::where('name_product', 'like', "%cablage%")
+               
+               ->paginate(6);
+    $product = \App\Product::All();
+    return view('sous-categories.cablage', compact('product','cablage'));
+  }
+
+   // Liste des Sous-Categories Sanitaires et Plomberies
+  public function appareillage(){
+    $appareillage = Product::where('name_product', 'like', "%appareillage%")
+               
+               ->paginate(6);
+    $product = \App\Product::All();
+   return view('sous-categories.appareillage', compact('product','appareillage'));
+  }
+  
+  // Liste des Sous-Categories Sanitaires et Plomberies
+  public function protection(){
+    $protection = Product::where('name_product', 'like', "%protection%")
+               
+               ->paginate(6);
+    $product = \App\Product::All();
+    return view('sous-categories.protection', compact('product','protection'));
+  }
+
 
 
 

@@ -13,7 +13,15 @@ class UsersController extends Controller
 {
     public function store(Request $request)
     {  
-
+      $request->validate([
+         'nom'=>'required',
+         'prenom'=> 'required',
+         'phone' => 'required ',
+         'adresse' => 'required',
+         'email' => 'required ',
+         'password' => 'required ',
+         
+     ]);
        $client = new Client();
        $client->nom_client = $request->input('nom');
        $client->prenom_client = $request->input('prenom');
@@ -32,7 +40,7 @@ class UsersController extends Controller
       $verif=User::find($user->id);
        //Auth::login($user);
          if($verif){
-            return back()->with('success_info' , 'Veuiller utiliser votre login et mot de passe pour vous connecter');
+            return back()->with('success_info' , 'Compte créer avec succès, Veuiller utiliser votre login et mot de passe pour vous connecter');
          }
          else{
             return back()->with('danger_info' , 'Inscription non effectuée, verifier les informations entrées');
