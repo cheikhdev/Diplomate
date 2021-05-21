@@ -395,7 +395,8 @@
         </div>
 
         
-
+        <script src="{{asset('js/js_home/dashbord-forme.js')}}"></script>
+        <script src="{{asset('js/js_home/sous_cat-forme.js')}}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCn8TFXGg17HAUcNpkwtxxyT9Io9B_NcM" defer></script>
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

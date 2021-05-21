@@ -114,6 +114,7 @@ Route::get('/apropos', 'HomeController@propos');
 Route::get('/actu', 'HomeController@actu');
 Route::get('/mention', 'HomeController@mention');
 Route::get('/cgv', 'HomeController@cgv');
+Route::get('/cgu', 'HomeController@cgv');
 Route::get('/partenaire', 'HomeController@parte');
 Route::get('/inco', 'HomeController@inco');
 Route::get('/ingelec', 'HomeController@ingelec');

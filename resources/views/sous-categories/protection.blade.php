@@ -170,7 +170,7 @@
                   <div class="col-12">
                     <div class="owl-carousel popular-slider" style="padding:1px;">
                       <!-- Start Single Product -->
-                      @foreach($fer as $product)
+                      @foreach($protection as $product)
                         <div class="single-list mr-3 bg-white">
                           <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
@@ -255,7 +255,7 @@
                                     <div class="col-12">
                                       <div class="owl-carousel popular-slider" style="padding:5px;">
                                         <!-- Start Single Product -->
-                                        @foreach($fer as $product)
+                                        @foreach($protection as $product)
                                           <div class="single-product" style="width:300px;height:300px;">
                                             <div class="product-img">
                                               <a href="product-details.html">
@@ -305,7 +305,7 @@
                                     <div class="col-12">
                                     <div class="owl-carousel popular-slider" style="padding:5px;">
                                       <!-- Start Single Product -->
-                                      @foreach($fer as $product)
+                                      @foreach($protection as $product)
                                       <div class="single-product" style="width:300px;height:300px;">
                                         <div class="product-img">
                                             <a href="product-details.html">
@@ -355,7 +355,7 @@
                                     <div class="col-12">
                                       <div class="owl-carousel popular-slider" style="padding:5px;">
                                         <!-- Start Single Product -->
-                                        @foreach($fer as $product)
+                                        @foreach($protection as $product)
                                         <div class="single-product" style="width:300px;height:300px;">
                                           <div class="product-img">
                                             <a href="product-details.html">
@@ -405,7 +405,7 @@
                                     <div class="col-12">
                                       <div class="owl-carousel popular-slider" style="padding:5px;">
                                       <!-- Start Single Product -->
-                                        @foreach($fer as $product)
+                                        @foreach($protection as $product)
                                         <div class="single-product" style="width:300px;height:200px;">
                                           <div class="product-img">
                                             <a href="product-details.html">
@@ -454,7 +454,7 @@
                                     <div class="col-12">
                                       <div class="owl-carousel popular-slider" style="padding:5px;">
                                       <!-- Start Single Product -->
-                                        @foreach($fer as $product)
+                                        @foreach($protection as $product)
                                         <div class="single-product" style="width:300px;height:200px;">
                                           <div class="product-img">
                                             <a href="product-details.html">

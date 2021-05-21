@@ -64,9 +64,11 @@
 			background-color:;
 		}
 		.redirect-login{
-			
+			font-weight:bold !important;
+			size:14px !important;
 			color:#191348 !important;
 			text-decoration:underline !important;
+			cursor:pointer !important;
 		}
 		.redirect-login:hover{
 			color:#BE1E2D !important;
@@ -325,8 +327,9 @@
 													<li id="acceuil" class=""><a href="{{url('/')}}" style="">acceuil</a></li>
 													<li id="propos" class=""><a href="{{url('/apropos')}}" class="">A propos<i class="fas fa-angle-down"></i></a>
 														<ul class="dropdown">
-															<li><a href="shop-grid.html">Mention légale</a></li>
-															<li><a href="cart.html">Conditions générales de vente</a></li>
+															<li><a href="/mention">Mention légale</a></li>
+															<li><a href="/cgu">Conditions générales d'utilisations</a></li>
+															<li><a href="/cgv">Conditions générales de vente</a></li>
 															<li><a href="/contact">Contact</a></li>
 															
 														</ul>
@@ -457,72 +460,79 @@
 					
 				</div>
 				<div class="modal-body container">
-				<form action="{{route('ajouter_user')}}" method="post">
+				<form action="{{route('ajouter_user')}}" method="post" id="inscription">
 											@csrf 
 											<div class="row">
 												<div class="form-group col-12">
 													<label for="inputEmail" class="ml-3" style="font-weight:bold;color:black;">Prénom</label>
 													<div class="col-12">
-														<input type="text" class="form-control h-50" id="prenom" name="prenom" placeholder="Votre Prenom">
+														<input type="text" class="form-control h-50" id="prenom_client" name="prenom" placeholder="Votre Prenom">
 													</div>
 												</div>
+												<div class="col-12" id="info-prenom" class=""></div>
 											</div>
 											<div class="row">
 												<div class="form-group col-12 ">
 													<label for="inputPassword" class="ml-3" style="font-weight:bold;color:black;">Nom</label>
 													<div class="col-12">
-											     	<input type="text" class="form-control h-50" id="nom" name="nom" placeholder="Votre Nom">
+											     		<input type="text" class="form-control h-50" id="nom_client" name="nom" placeholder="Votre Nom">
 													</div>
 												</div>
+												<div class="col-12" id="info-nom" class=""></div>
 											</div>
 											<div class="row ">
 												<div class="form-group col-12">
 														<label for="inputPassword" class="ml-3" style="font-weight:bold;color:black;">Adresse</label>
 														<div class="col-12">
-															<input type="text" class="form-control h-50" id="adresse" name="adresse" placeholder="Votre Adresse">
+															<input type="text" class="form-control h-50" id="adresse_client" name="adresse" placeholder="Votre Adresse">
 														</div>
 												</div>
+												<div class="col-12" id="info-adresse" class=""></div>
 											</div>
 											<div class="row">
 												<div class="form-group col-12 ">
 													<label for="inputPassword" class="ml-3"style="font-weight:bold;color:black;">Telephone</label>
 													<div class="col-12">
-														<input type="text" class="form-control h-50" id="lieu" name="phone" placeholder="Votre Telephone">
+														<input type="text" class="form-control h-50" id="phone_client" name="phone" placeholder="Votre Telephone">
 													</div>
 												</div>
+												<div class="col-12" id="info-phone" class=""></div>
 											</div>
 											<div class="row">
 												<div class="form-group col-12 ">
 													<label for="inputPassword" class="ml-3" style="font-weight:bold;color:black;">Email</label>
 													<div class="col-12">
-														<input type="email" class="form-control h-50" id="date" name="email" placeholder="Votre mail">
+														<input type="email" class="form-control h-50" id="email_client" name="email" placeholder="Votre mail">
 													</div>
 												</div>
+												<div class="col-12" id="info-email" class=""></div>
 											</div>
 											<div class="row ">
 												<div class="form-group col-12">
 														<label for="inputPassword" class="ml-3" style="font-weight:bold;color:black;">Mot de passe</label>
 														<div class="col-12">
-															<input type="password" class="form-control h-50" id="adresse" name="password" placeholder="Votre password">
+															<input type="password" class="form-control h-50" id="password_client" name="password" placeholder="Votre password">
 														</div>
 												</div>
+												<div class="col-12" id="info-password" class=""></div>
 											</div>
 											<div class="row">
 												<div class="form-group col-12">
 													<label for="inputPassword"class="ml-3" style="font-weight:bold;color:black;">Cofirmer mot de passe</label>
 													<div class="col-12">
-														<input type="password" class="form-control h-50" id="lieu" name="confirme_pass" placeholder="confirmer password">
+														<input type="password" class="form-control h-50" id="confirme_pass" name="confirme_pass" placeholder="confirmer password">
 													</div>
 												</div>
+												<div class="col-12" id="info-confirme_pass" class=""></div>
 											</div>
 											<div class="d-flex justify-content-around mb-4">         
-												<button type="submit" style="width:150px;border-radius:50px;height:30px !important;background:#191348;" class="">Enregistrer</button>
-												<button type="reset" style="width:150px;border-radius:50px;height:30px !important;background:#BE1E2D;" class="" data-dismiss="modal">Annuler</button>
+												<button type="submit" style="width:150px;border-radius:50px;height:30px !important;background:#191348; color:white;" class="">Enregistrer</button>
+												<button type="reset" style="width:150px;border-radius:50px;height:30px !important;background:#BE1E2D; color:white;" class="" data-dismiss="modal">Annuler</button>
 											</div>
+											<span  style="font-weight: bold;">En vous inscrivant vous accepterez les conditions<br> citaient dans :<a href="/mention" style="color:#BE1E2D;font-weight: bold; ">Mentions Légales </a>, <a href="/cgu" style="color:#BE1E2D;font-weight: bold;">CGU</a> et <a href="/cgv" style="color:#BE1E2D;font-weight: bold;" >CGV</a></span>
 										</form>
-
-										<div class="d-flex justify-content-center">
-											<a href="/login" class="redirect-login" style="">  Connecter à mon compte</a>
+										<div class="d-flex justify-content-center mt-5">
+											<a href="#" data-toggle="modal" data-target="#Modal_inscription" class="redirect-login" style=""> <i class="fas fa-user-lock fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i> Se connecter</a>
 										</div>
 					</div>
 				
@@ -626,6 +636,7 @@
 	
 <!-- Jquery --> 
 <!--script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script!-->
+<script src="{{asset('js/js_home/controle-forme.js')}}"></script>
 <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -669,6 +680,7 @@
 	<script src="{{asset('js/js_home/commande.js')}}"></script>
 	<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<script href="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+	
 	
     <!-- <script>
         $(document).ready( function () {

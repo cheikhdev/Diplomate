@@ -178,19 +178,28 @@ public function gravier(){
       
  
 
- public function actu() {
+  public function actu() {
       return view('pages.actu');
     }
-public function parte() {
+    public function parte() {
       return view('pages.partenaire');
     }
     public function propos() {
       return view('pages.propos');
     }
    
- 
-     
-      
+ // les pages de a propos
+  public function cgv() {
+      return view('pages.cgv');
+  }
+   
+  public function cgu() {
+    return view('pages.cgu');
+  }
+
+  public function mention() {
+    return view('pages.mention');
+  }
     /**
      * Show the application dashboard.
      *

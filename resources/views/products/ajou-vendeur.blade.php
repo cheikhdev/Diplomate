@@ -41,7 +41,7 @@
                         </table>
                     </div>
                 <!-- Finn d'affichage des proprietaires -->
-
+                
             <div class="modal fade " id="ajoutproprietaire" >
                 <div class="modal-dialog  modal-md">
                     <div class="modal-content" >
@@ -60,15 +60,16 @@
 									</div>                        
 									<!-- Modal body -->
 									<div class="modal-body  p-3" style="height:auto;">
-										<form action="/create-vendeur" method="post">
+										<form action="/create-vendeur" method="post" id="add_vendeur">
 											@csrf 
 											<div class="row">
 												<div class="form-group col-12 ">
 													<label for="inputEmail" class="" style="font-weight:bold;color:red;">Nom proprietaire<span style="background-colol:red;">*</span></span></label>
 													<div class="col-12">
-														<input type="text" class="form-control" id="" name="name_property" placeholder="Entrer nom vendeur">
+														<input type="text" class="form-control" id="name_vendeur" name="name_property" placeholder="Entrer nom vendeur">
 													</div>
 												</div>
+                                                <div class="col-12" id="info_vendeur"></div>
                                             </div> 
                                             <div class="row">
 												<div class="form-group col-12">
@@ -91,4 +92,23 @@
                     </div>
                 </div>
             </div>
+            <script>
+                    let add_vendeur = document.getElementById('add_vendeur');
+                    let name_vendeur = document.getElementById('name_vendeur');
+                    let info_vendeur = document.getElementById('info_vendeur');
+
+                    // Formulaire categorie
+                    add_vendeur.addEventListener('submit',function(e){
+                        e.preventDefault();
+                            if (name_vendeur.value==="") {
+                                name_vendeur.style.border="1px solid red";
+                                info_vendeur.classList.add("alert","alert-danger");
+                                info_vendeur.innerText="veuiller remplir ce champ";
+                            }
+                            else
+                            {
+                                add_vendeur.submit();
+                            }     
+                    });
+                </script>
     @endsection        

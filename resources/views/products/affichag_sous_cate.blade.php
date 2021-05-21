@@ -62,26 +62,28 @@
                                             </div>                        
                                             <!-- Modal body -->
                                             <div class="modal-body  p-3" style="height:auto;">
-                                                <form action="/createSousCategory" method="post">
+                                                <form action="/createSousCategory" method="post"  id="add_sous">
                                                     @csrf 
                                                     <div class="row">
                                                         <div class="form-group col-12 ">
                                                             <label for="inputEmail" class="" style="font-weight:bold;color:red;">Nom sous catégorie<span style="background-colol:red;">*</span></span></label>
                                                             <div class="col-12">
-                                                                <input type="text" class="form-control" id="" name="nom_sous_category" placeholder="nom sous categorie">
+                                                                <input type="text" class="form-control" id="sous_cat" name="nom_sous_category" placeholder="nom sous categorie">
                                                             </div>
                                                         </div>
+                                            
                                                     </div> 
                                                     <div class="row">
                                                         <div class="form-group col-12">
                                                             <label for="sexe" class=" " style="color:red;">Categorie</label>
-                                                            <select name="id_category" id="id_category" class="form-control">
+                                                            <select name="id_category" id="name_category_sous" class="form-control">
                                                                 <option value=""></option>
                                                                     @foreach($categories as $key => $value)
                                                                     <option value="{{$key}}">{{$value}}</option>
                                                                     @endforeach
                                                             </select>
                                                         </div>
+                                                        <div class="col-12" id="info_cat_sous"></div>
                                                     </div>
                                                     <div class="d-flex justify-content-center " style="">
                                                         <button class=" btn-success" style="border-radius:70px;width:200px;height:45px;size:12px;font-weight:bold;">

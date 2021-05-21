@@ -15,7 +15,7 @@
 	 <link rel="stylesheet" href="{{asset('css/css_home/font-awesome.css')}}">
   <!-- Fancybox -->
     <link rel="stylesheet" href="{{asset('css/css_home/jquery.fancybox.min.css')}}">
-	<link href="{{asset('css/zxcss_home/style.css')}}" rel="stylesheet" />
+	<link href="{{asset('css/css_home/style.css')}}" rel="stylesheet" />
 </head>
 <body>
 <style>
@@ -132,7 +132,7 @@
 			</div>
 		</div>
 		<!-- start modal incription-->
-	<div class="modal fade" id="Modal_inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="Modal_inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 				<div class="modal-header" style="height:auto !important;">
@@ -147,68 +147,76 @@
 					
 				</div>
 				<div class="modal-body container">
-				<form action="{{route('ajouter_user')}}" method="post">
+				<form action="{{route('ajouter_user')}}" method="post" id="inscription">
 											@csrf 
 											<div class="row">
 												<div class="form-group col-12">
 													<label for="inputEmail" class="ml-3" style="font-weight:bold;color:black;">Prénom</label>
 													<div class="col-12">
-														<input type="text" class="form-control h-50" id="prenom" name="prenom" placeholder="Votre Prenom">
+														<input type="text" class="form-control h-50" id="prenom_client" name="prenom" placeholder="Votre Prenom">
 													</div>
 												</div>
+												<div class="col-12" id="info-prenom" class=""></div>
 											</div>
 											<div class="row">
 												<div class="form-group col-12 ">
 													<label for="inputPassword" class="ml-3" style="font-weight:bold;color:black;">Nom</label>
 													<div class="col-12">
-											     	<input type="text" class="form-control h-50" id="nom" name="nom" placeholder="Votre Nom">
+											     		<input type="text" class="form-control h-50" id="nom_client" name="nom" placeholder="Votre Nom">
 													</div>
 												</div>
+												<div class="col-12" id="info-nom" class=""></div>
 											</div>
 											<div class="row ">
 												<div class="form-group col-12">
 														<label for="inputPassword" class="ml-3" style="font-weight:bold;color:black;">Adresse</label>
 														<div class="col-12">
-															<input type="text" class="form-control h-50" id="adresse" name="adresse" placeholder="Votre Adresse">
+															<input type="text" class="form-control h-50" id="adresse_client" name="adresse" placeholder="Votre Adresse">
 														</div>
 												</div>
+												<div class="col-12" id="info-adresse" class=""></div>
 											</div>
 											<div class="row">
 												<div class="form-group col-12 ">
 													<label for="inputPassword" class="ml-3"style="font-weight:bold;color:black;">Telephone</label>
 													<div class="col-12">
-														<input type="text" class="form-control h-50" id="lieu" name="phone" placeholder="Votre Telephone">
+														<input type="text" class="form-control h-50" id="phone_client" name="phone" placeholder="Votre Telephone">
 													</div>
 												</div>
+												<div class="col-12" id="info-phone" class=""></div>
 											</div>
 											<div class="row">
 												<div class="form-group col-12 ">
 													<label for="inputPassword" class="ml-3" style="font-weight:bold;color:black;">Email</label>
 													<div class="col-12">
-														<input type="email" class="form-control h-50" id="date" name="email" placeholder="Votre mail">
+														<input type="email" class="form-control h-50" id="email_client" name="email" placeholder="Votre mail">
 													</div>
 												</div>
+												<div class="col-12" id="info-email" class=""></div>
 											</div>
 											<div class="row ">
 												<div class="form-group col-12">
 														<label for="inputPassword" class="ml-3" style="font-weight:bold;color:black;">Mot de passe</label>
 														<div class="col-12">
-															<input type="password" class="form-control h-50" id="adresse" name="password" placeholder="Votre password">
+															<input type="password" class="form-control h-50" id="password_client" name="password" placeholder="Votre password">
 														</div>
 												</div>
+												<div class="col-12" id="info-password" class=""></div>
 											</div>
 											<div class="row">
 												<div class="form-group col-12">
 													<label for="inputPassword"class="ml-3" style="font-weight:bold;color:black;">Cofirmer mot de passe</label>
 													<div class="col-12">
-														<input type="password" class="form-control h-50" id="lieu" name="confirme_pass" placeholder="confirmer password">
+														<input type="password" class="form-control h-50" id="confirme_pass" name="confirme_pass" placeholder="confirmer password">
 													</div>
 												</div>
+												<div class="col-12" id="info-confirme_pass" class=""></div>
 											</div>
 											<div class="d-flex justify-content-around mb-4">         
 												<button type="submit" style="width:150px;border-radius:50px;height:30px !important;background:#191348; color:white;" class="">Enregistrer</button>
 												<button type="reset" style="width:150px;border-radius:50px;height:30px !important;background:#BE1E2D; color:white;" class="" data-dismiss="modal">Annuler</button>
 											</div>
+											<span  style="font-weight: bold;">En vous inscrivant vous accepterez les conditions<br> citaient dans :<a href="/mention" style="color:#BE1E2D;font-weight: bold; ">Mentions Légales </a>, <a href="/cgu" style="color:#BE1E2D;font-weight: bold;">CGU</a> et <a href="/cgv" style="color:#BE1E2D;font-weight: bold;" >CGV</a></span>
 										</form>
 					</div>
 				
@@ -225,6 +233,8 @@
     <script src="{{asset('js/js_home/popper.min.js')}}"></script>
  <!-- Bootstrap js -->
     <script src="{{asset('js/js_home/bootstrap.min.js')}}"></script>
+
+	<script src="{{asset('js/js_home/controle-forme.js')}}"></script>
 </body>
 
 </html>

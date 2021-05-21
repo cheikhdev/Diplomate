@@ -61,21 +61,22 @@
 									</div>                        
 									<!-- Modal body -->
 									<div class="modal-body  p-3" style="height:auto;">
-										<form action="/createCategory" method="post">
+										<form action="/createCategory" method="post" id="add_categorie">
 											@csrf 
 											<div class="row">
 												<div class="form-group col-12 ">
 													<label for="inputEmail" class="" style="font-weight:bold;color:red;">Nom catégorie<span style="background-colol:red;">*</span></span></label>
 													<div class="col-12">
-														<input type="text" class="form-control" id="" name="name_category" placeholder="Entrer nom categorie">
+														<input type="text" class="form-control" id="name_category" name="name_category" placeholder="Entrer nom categorie">
 													</div>
 												</div>
+                                                <div class="col-12" id="info_cat"></div>
                                             </div> 
                                             <div class="row">
 												<div class="form-group col-12">
-													<label for="inputPassword" class="" style="font-weight:bold;color:red;">Description</label>
+													<label for="inputPassword" class="" style="font-weight:bold;color:red;">Description (optionnel)</label>
 													<div class="col-12">
-														<textarea name="desc" id="" cols="50" rows="5"></textarea>
+														<textarea name="desc" id="" cols="" rows="5"></textarea>
 													</div>
 												</div>
 											</div>
