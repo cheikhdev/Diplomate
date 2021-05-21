@@ -70,7 +70,7 @@
 			text-decoration:underline !important;
 			cursor:pointer !important;
 		}
-		.redirect-login:hover{
+		.redirect-login	:hover{
 			color:#BE1E2D !important;
 			
 			text-decoration:underline !important;
