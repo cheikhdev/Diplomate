@@ -33,14 +33,36 @@
                     </div>
                   </div>
                 	<div class="row">
-							<div class="col-xl-8 col-md-12">
+							<div class="col-xl-12">
                       <!-- Sales Graph -->
                       <div class="card card-default" data-scroll-height="675">
                         <div class="card-header">
                           
                         </div>
                         <div class="card-body">
-                          
+                          <div class="table-responsive">
+                            <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                              <thead>
+                                <tr>
+                                  <th>Nom</th>
+                                  <th>Prenom</th>
+                                  <th>Adresse</th>
+                                  <th>Telephone</th>
+                                  <th>Email</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                @foreach($clients as $users)
+                                  <tr>
+                                    <td>{{$users->client->nom_client}}</td>
+                                    <td>{{$users->client->prenom_client}}</td>
+                                    <td>{{$users->client->adresse_client}}</td>
+                                    <td>{{$users->client->telephone_client}}</td>
+                                    <td>{{$users->email}}</td>
+                                  </tr>
+                                @endforeach
+                              </tbody>
+                            </table>
                         </div>
                         <div class="card-footer d-flex flex-wrap bg-white p-0">
                           <div class="col-6 px-0">
@@ -54,28 +76,5 @@
                         </div>
                       </div>
                     </div>
-							<div class="col-xl-4 col-md-12">
-                  <!-- Doughnut Chart -->
-                  <div class="card card-default" data-scroll-height="675">
-                    <div class="card-header justify-content-center">
-                      
-                    </div>
-                    <div class="card-body" >
-                      <canvas id="doChart" ></canvas>
-                    </div>
-                    <a href="#" class="pb-5 d-block text-center text-muted"><i class="mdi mdi-download mr-2"></i> Download overall report</a>
-                    <div class="card-footer d-flex flex-wrap bg-white p-0">
-                      <div class="col-6">
-                        <div class="py-4 px-4">
-                          
-                        </div>
-                      </div>
-                      <div class="col-6 border-left">
-                        <div class="py-4 px-4 ">
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+							
     @endsection

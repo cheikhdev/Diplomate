@@ -1,65 +1,4 @@
 @extends('layouts.app')
-      @section('connect')
-        <li><a href="#" data-toggle="modal" data-target="#myModal"> <i class="fas fa-sign-in-alt fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>Inscription</a></li>
-        <li><a href="login.html#"data-toggle="modal" data-target="#ModalLogin"> <i class="fas fa-user-lock fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>Connexion</a></li>
-      @endsection
-
-    @section('indice_cart')
-        <div class="poper">
-      <a href="#" class="single-icon fixed" id="shopping"><i class="fas fa-shopping-cart fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i> 
-        <span class="total-count indice" id="indice_cart">{{Cart::count()}}</span>              
-      </a>
-    
-      <!-- Shopping Item -->
-      <div class="shopping-item w-auto" id="shopping-item">
-        <div class="dropdown-cart-header">
-          <span id="" class="indice">{{Cart::count()}} produit(s)</span>
-          
-          <a href="/panier" class="">Afficher</a>
-          <form action="#">
-            <input type="hidden" id="indiceH" name="indice" class="indice" value="{{Cart::count()}}">
-          </form>
-        </div>
-        <div class="shop" id="shop_all">
-          <ul class="shopping-list">
-            <table id="myTable" class="table" style="overflow:hidden; width:100%;">
-              <tr>
-                    <th>Nom </th>
-                    <th>Qté</th>
-                    <th>Prix</th>
-                    <th>Delete</th>
-              </tr>
-              @foreach(Cart::content() as $row)
-                  <tr> 
-                    <td class="nom"> {{$row->name}}</td>
-                    <td class="qty">  <span style="font-size: 20px;">{{$row->qty}}</span></td>
-                    <td class="prix"><span class="amount" style="font-size: 16px;">{{$row->price}} </span></td>
-                    <td class="">
-                      <form action="{{route('cart.destroy',$row->rowId)}}" method="POST" class="w-">
-                      @csrf                      
-                      @method('DELETE')
-                        <button class="bg-danger"><i class="fas fa-trash-alt w-auto"></i></a></button>
-                      </form>
-                    </td>
-                  </tr>
-                
-              @endforeach
-            </table>
-          </ul>
-          <div class="bottom">
-            <div class="total">
-              <span>Total</span>
-              <span class="total-amount">{{Cart::total()}} FCFA</span>
-            </div>
-          </div>
-          <div class="d-flex justify-content-center">
-           <a href="{{('/panier')}}" class="btn btn-info animate"><span style="color: black;">Voir le panier<i class="fas fa-arrow-circle-right"></i></span></a>
-          </div> 
-        </div>  
-        <div id="display_item"></div>
-      </div>  
-    <!--/ End Shopping Item -->             
-    @endsection
     @section('content')
       <div class="card-header">
                     <h2 class="mr-3" style="text-align: center;color:#191348; ">Description générale du produit</h2>
@@ -74,7 +13,7 @@
               <div class="col-sm-12 col-md-6" style="height:auto "> 
                   <div class="h-100 show-info" >
                     <div class="" >
-                      <h6 class="">  <span class="" style="font-weight: bold;">{{$product->category->name_category ?? ""}}/{{$product->sous_category->name ?? ""}}<span>
+                      <h6 class=""><span style="" class="" style="font-weight: bold;">{{$product->category->name_category ?? ""}}/{{$product->sous_category->name ?? ""}}<span>
                       </h6>
                     </div>
                     <div style="margin-top:-5px im !important;">

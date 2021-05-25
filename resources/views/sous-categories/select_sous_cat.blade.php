@@ -204,7 +204,6 @@
 													</div>
 												</div>
 												@endif
-												
 											@endforeach
 											<!-- End Single Product -->
 										</div>

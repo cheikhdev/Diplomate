@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Matcosen Login</title>
 	<link rel="icon" type="image/png" href="images/embleme.PNG">
+	<link rel="icon" type="image/png" href="images/embleme.PNG">
 	<link href="{{asset('css/app.css')}}" rel="stylesheet" />
     <link href="{{asset('css/all.css')}}" rel="stylesheet" />
 	

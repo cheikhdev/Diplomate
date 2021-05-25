@@ -170,51 +170,40 @@
                   <div class="col-12">
                     <div class="owl-carousel popular-slider" style="padding:1px;">
                       <!-- Start Single Product -->
-                      @foreach($pinceau as $product)
-                        <div class="single-list mr-3 bg-white">
-                          <div class="row">
-                            <div class="col-lg-6 col-md-6 col-12">
-                              <div class="list-image overlay">
-                                 <a href="/produit/{{$product->id }}/show"><img style="height:100%;"  src="{{$product->image_product ? asset($product->image_product) : asset('uploads/images/default.png')}}" alt="#"></a>
-                                
-                                <form action="#" id="{{'product_'.$product->id}}" class="add-to-cart">
-                                  @csrf
-                                  <input type="hidden" id="indice" name="product_id" value="{{Cart::count()}}">
-                                  <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::id()}}">
-                                  <input type="hidden" name="product_id" value="{{$product->id}}">
-                                  <input type="hidden" name="prix_product" value="{{$product->prix_product}}">
-                                  <button type="submit" class="buy" id="panier-form">
-                                    <i class="fas fa-shopping-cart fa-md fa-fw  text-gray-400" aria-hidden="true"></i>
-                                  </button>
-                                </form>
-                                
-                              </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12 no-padding">
-                              <div class="content">
-                                <h4 class="title"><a href="/produit/{{$product->id}}/show"><span style="font-size: 18px;">{{$product->name_product}}</span></a></h4>
-                                <span class="btn-info" style="font-style: italic;font-size: 15px;">{{$product->prix_product}}
-                                <em style="font-weight: bold;
-                                color: #be1e2d;">FcFa</em></span><br>
-                                  
-                                <form action="#" id="{{'product_'.$product->id}}" class="add-to-cart">
-                                  @csrf
-                                  <input type="hidden" id="indice" name="product_id" value="{{Cart::count()}}">
-                                  <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::id()}}">
-                                  <input type="hidden" name="product_id" value="{{$product->id}}">
-                                  <input type="hidden" name="prix_product" value="{{$product->prix_product}}">
-                                  <button type="submit" class="">
-                                    <i class="fas fa-shopping-cart fa-md fa-fw  text-gray-400" aria-hidden="true"></i>
-                                    Acheter
-                                  </button>
-                                </form> 
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                      @endforeach
-                      <!-- End Single Product -->
+											@foreach($pinceau as $product)
+												<div class="single-list mr-3 bg-white">
+													<div class="row">
+														<div class="col-lg-6 col-md-6 col-12">
+															<div class="list-image overlay">
+															   <a href="/produit/{{$product->id }}/show"><img style="height:100%;"  src="{{$product->image_product ? asset($product->image_product) : asset('uploads/images/default.png')}}" alt="#"></a>
+															</div>
+														</div>
+														<div class="col-lg-6 col-md-6 col-12 no-padding">
+															<div class="content">
+																<h4 class="title"><a href="/produit/{{$product->id}}/show"><span style="font-size: 18px;">{{$product->name_product}}</span></a></h4>
+																<span class="" style="font-style: italic;font-size: 15px;color: #be1e2d;font-weight: bold;
+																">{{$product->prix_product}}
+																<em style="font-weight: bold;
+																color: black;">FcFa</em></span><br>
+															    
+																<form action="#" id="{{'product_'.$product->id}}" class="add-to-cart">
+																	@csrf
+																	<input type="hidden" id="indice" name="product_id" value="{{Cart::count()}}">
+																	<input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::id()}}">
+																	<input type="hidden" name="product_id" value="{{$product->id}}">
+																	<input type="hidden" name="prix_product" value="{{$product->prix_product}}">
+																	<input type="hidden" name="quantite" value="1">
+																	<button type="submit">
+																		<i class="fas fa-shopping-cart fa-md fa-fw  text-gray-400" aria-hidden="true"></i>
+																		Acheter
+																	</button>
+																</form>	
+															</div>
+														</div>
+													</div>
+												</div>
+											@endforeach
+											<!-- End Single Product -->
                     </div>
                   </div>
                 </div>

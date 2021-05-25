@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\User;
 
 class AcceuilController extends Controller
 {
@@ -14,6 +15,8 @@ class AcceuilController extends Controller
      }
      
      public function dashbord(){
-        return view('accueildashbord');
+        $clients = User::where('roles','user')->get();
+        return view('accueildashbord', compact('clients'));
     }
+
 }

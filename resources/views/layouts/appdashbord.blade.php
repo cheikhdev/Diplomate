@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Tableau de bord</title>
-
+  <link rel="icon" type="image/png" href="images/embleme.PNG">
   <!-- GOOGLE FONTS -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -373,7 +373,7 @@
           <div class="container content-wrapper" style="padding-top:10px;">
             @yield('content')
           </div>
-                  <footer class="footer mt-auto">
+                  <footer class="footer mt-auto w-100">
                     <div class="copyright bg-white">
                       <p>
                         &copy; <span id="copy-year">2021</span> Copyright Matcosen  tous droits reserves .                   <a
@@ -381,7 +381,7 @@
                           href="http://www.iamabdus.com/"
                           target="_blank"
                           ></a
-                        >.
+                        >
                       </p>
                     </div>
                     <script>
