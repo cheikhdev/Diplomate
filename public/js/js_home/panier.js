@@ -50,7 +50,6 @@ $('form.up-to-cart').submit(function (e) {
             update.classList.add('update-disable');
             $('#total_cart').load(document.URL +  ' #total_cart');
           //$('#show_pannier').load(document.URL +  ' #show_pannier');
-          
         } else {
           console.log("il y une erreur");
         }

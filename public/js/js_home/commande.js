@@ -12,7 +12,9 @@ let infoChamps = document.getElementById('infoChamps');
 let check=document.getElementById('check');
 let autre_address = document.getElementById('autre_address');
 let commande = document.getElementById("commande");
+let commander = document.getElementById("commander");
 let facturation = document.getElementById("facturation");
+let paiement = document.getElementById("paiement");
 let labnom = document.getElementById("labnom");
 let labmail = document.getElementById("labmail");
 let labphone = document.getElementById("labphone");
@@ -24,6 +26,10 @@ let phaseValBordComm = document.getElementById("phaseValBordComm");
 let phaseValLiv1 = document.getElementById("phaseValLiv1");
 let phaseValLiv2 = document.getElementById("phaseValLiv2");
 let phaseValBordLiv = document.getElementById("phaseValBordLiv");
+let phaseValPaie1 = document.getElementById("phaseValPaie1");
+let phaseValPaie2 = document.getElementById("phaseValPaie2");
+let phaseValBordPaie = document.getElementById("phaseValBordPaie");
+let valider = document.getElementById("valider");
 ////Recupération du button suivant dans livraison
 let suiv2 = document.getElementById('suivantbtn2');
 ///Récuperation de la l'espace livraison
@@ -77,6 +83,7 @@ suiv.addEventListener('click', function(e){
 });
 
 
+
 document.getElementById("livMagazin").addEventListener('click',function(){
     if(document.getElementById("livMagazin").checked==true){
         document.getElementById("livDomicile").checked=false;
@@ -127,6 +134,33 @@ suiv2.addEventListener('click', function(){
 
     }
 });
+
+commander.addEventListener('click', function(){   
+        paiement.style.display="block";
+        commande.style.display="none";
+        
+        phaseValPaie1.classList.remove('phase-non-valide');
+        phaseValBordPaie.classList.remove('phase-non-valide-border');
+        phaseValPaie2.classList.remove('phase-non-valide');
+
+        phaseValPaie1.classList.add('phase-valide');
+        phaseValBordPaie.classList.add('phase-valide-border');
+        phaseValPaie2.classList.add('phase-valide');
+});
+
+document.getElementById("PaieLiv").addEventListener('click',function(){
+    if(document.getElementById("PaieLiv").checked==true){
+        document.getElementById("PaieLigne").checked=false;
+    }
+    
+});
+
+document.getElementById("PaieLigne").addEventListener('click',function(){
+    if(document.getElementById("PaieLigne").checked==true){
+        document.getElementById("PaieLiv").checked=false;
+    }
+   
+});
 ///////////
 retourfacture.addEventListener('click', function(){
         livraison.style.display="none";
@@ -151,6 +185,18 @@ document.getElementById("retourlivraison").addEventListener('click', function(){
     phaseValBordComm.classList.add('phase-non-valide-border');
     phaseValComm2.classList.add('phase-non-valide');
 });
+
+valider.addEventListener('click', function(){
+    if (document.getElementById("PaieLigne").checked==false && document.getElementById("PaieLiv").checked==false) {
+        document.getElementById("infoModePaie").innerText="Veuiller selectionner un mode de paiement";
+        document.getElementById("infoModePaie").classList.add("alert","alert-danger");
+    }
+    else if (document.getElementById("PaieLigne").checked==true && document.getElementById("PaieLiv").checked==false) {
+        document.getElementById('purchase').submit();
+    } else {
+        
+    }
+})
 ///
 if(conteur==5){
     next.disabled=false;

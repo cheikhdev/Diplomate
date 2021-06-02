@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex mt-3">
-                        <div class="col-sm-6 col-md-4 pl-0 pr-0" style="">
+                        <div class="col-3 pl-0 pr-0" style="">
                             <div class="d-flex ">
                                 <div class="col-5 phase-valide" id="phaseValFact1" style="">
                                 </div>
@@ -24,7 +24,7 @@
                             </div>
                             <h4 style="text-align:center;">Facturation</h4>
                         </div>
-                        <div class="col-sm-6 col-md-4 pl-0 pr-0">
+                        <div class="col-3 pl-0 pr-0">
                             <div class="d-flex ">
                                 <div class="col-5 phase-non-valide" id="phaseValLiv1">
                                 </div>
@@ -36,7 +36,7 @@
                             </div>
                             <h4 style="text-align:center;">Livraison</h4>
                         </div>
-                        <div class="col-sm-6  col-md-4 pl-0 pr-0">
+                        <div class="col-3 pl-0 pr-0">
                             <div class="d-flex ">
                                 <div class="col-5 phase-non-valide" id="phaseValComm1">
                                 </div>
@@ -48,17 +48,22 @@
                             </div>
                             <h4 style="text-align:center;">Commande</h4>
                         </div>
+                        <div class="col-3 pl-0 pr-0">
+                            <div class="d-flex ">
+                                <div class="col-5 phase-non-valide" id="phaseValPaie1">
+                                </div>
+                                <div class="col-2 phase-non-valide-border" id="phaseValBordPaie">
+                                    <h5  class="pt-2 pb-2" style="text-align:center;">4</h5>
+                                </div>
+                                <div class="col-5 phase-non-valide" id="phaseValPaie2">
+                                </div>
+                            </div>
+                            <h4 style="text-align:center;">Paiement</h4>
+                        </div>
                         <style>
-        
-                            @media (min-width:576px) {
+                            @media (max-width:768px) {
                                 h4{
-                                    size:12px !important;
-                                }
-                            }
-
-                            @media (min-width:768px) {
-                                h4{
-                                    size:12px !important;
+                                    font-size:14px !important;
                                 }
                             }
                             }
@@ -66,9 +71,6 @@
                             @media (min-width:992px) {
                                 
                             }
-
-                        
-
                     </style>
                     </div>
                     <div class="container mt-5" id="facturation">
@@ -185,7 +187,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="mt-5" id="commande" style="display:none;">
                         <h4 class="mb-3 details">Details de la commande</h4>
                         <div class="row mb-5">
@@ -245,15 +246,52 @@
                         </div>
                         <div class="d-flex justify-content-around">
                             <button id="retourlivraison" class="" >Retour a la livraison</button>
-                            <form action="/purchase" method="post">
-                                @csrf
-                                <input type="hidden" id="nom_client" value="" name="nom_client">
-                                <input type="hidden" value="" id="prenom_client" name="prenom_client">
-                                <input type="hidden" value="" id="email_client" name="email_client">
-                                <input type="hidden" value="" id="phone_client" name="phone_client">
-                                <input type="hidden" value="" id="adresse_client" name="adresse_client">
-                                <button id="commander" type="submit" class="">Payer </button>
-                            </form>
+                            <button id="commander" type="submit" class="">Payer </button>
+                        </div>
+                    </div>
+                    <div class="mt-5" id="paiement" style="display:none;">
+                        <h4 class="mb-3 details">Choix type de paiement</h4>
+                        <div class="mb-5">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-5 mt-4 d-flex justify-content-center" >Veuiller selectionner votre type de paiement</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-5 d-flex">
+                                            <input type="checkbox" class=" mr-2" style="height:10px;width:10px;" name="PaieLiv" id="PaieLiv">
+                                            <h6>Payer à la livraison</h6>
+                                        </div>
+                                        <div class="d-flex">
+                                            <input type="checkbox" class=" mr-2" name="PaieLigne" id="PaieLigne">
+                                            <h6>Payer en ligne (orange money, wave, free money, dunyapay, carte ...)</h6>
+                                            <form action="/purchase" method="post" id="purchase">
+                                                @csrf
+                                                <input type="hidden" id="nom_client" value="" name="nom_client">
+                                                <input type="hidden" value="" id="prenom_client" name="prenom_client">
+                                                <input type="hidden" value="" id="email_client" name="email_client">
+                                                <input type="hidden" value="" id="phone_client" name="phone_client">
+                                                <input type="hidden" value="" id="adresse_client" name="adresse_client">
+                                            </form>
+                                            <form action="/add_order" method="post" id="add_order">
+                                                @csrf
+                                                <input type="hidden" id="nom_client" value="" name="nom_client">
+                                                <input type="hidden" value="" id="prenom_client" name="prenom_client">
+                                                <input type="hidden" value="" id="email_client" name="email_client">
+                                                <input type="hidden" value="" id="phone_client" name="phone_client">
+                                                <input type="hidden" value="" id="adresse_client" name="adresse_client">
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div id="infoModePaie" class="">
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button id="retourlivraison" class="" >Retour a la livraison</button>
+                            <button id="valider" type="submit" class="">Valider </button>
                         </div>
                     </div>
                 </div>

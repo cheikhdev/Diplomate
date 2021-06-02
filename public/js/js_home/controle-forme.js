@@ -1,4 +1,4 @@
-// récuperation des ids des inputs
+// récuperation des ids des input
 let nom_client= document.getElementById('nom_client');
 let prenom_client= document.getElementById('prenom_client');
 let adresse_client= document.getElementById('adresse_client');
@@ -16,22 +16,22 @@ let info_email= document.getElementById('info-email');
 let info_confirme= document.getElementById('info-confirme_pass');
 let info_password= document.getElementById('info-password');
 
-// déclaration tableau des inputs et tableau des divs info
+// déclaration tableau des input et tableau des divs info
 
-let inputs=[];
-inputs[0] = prenom_client;inputs[1] = nom_client;inputs[2] = adresse_client;inputs[3] = phone_client;inputs[4] = email_client; inputs[5] = password_client; inputs[6] = confirme_pass;
+let input=[];
+input[0] = prenom_client;input[1] = nom_client;input[2] = adresse_client;input[3] = phone_client;input[4] = email_client; input[5] = password_client; input[6] = confirme_pass;
 
 let infos=[];
 infos[0] = info_prenom;infos[1] = info_nom;infos[2] = info_adresse;infos[3] = info_phone;infos[4] = info_email;infos[5] = info_password;infos[6] = info_confirme;
 
-for (let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener('focus',function(){
+for (let i = 0; i < input.length; i++) {
+    input[i].addEventListener('focus',function(){
         for (let j = 0; j < i; j++) {
-            if (inputs[j].value==="") {
-                inputs[j].style.border="1px solid red";
+            if (input[j].value==="") {
+                input[j].style.border="1px solid red";
             }
             else{
-                inputs[j].style.border="1px solid green";
+                input[j].style.border="1px solid green";
             }
         }
     });
@@ -41,11 +41,11 @@ let pointeur =0;
 document.getElementById('inscription').addEventListener('submit',function(e){
     e.preventDefault();
 
-    for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].value==="") {
+    for (let i = 0; i < input.length; i++) {
+        if (input[i].value==="") {
             infos[i].classList.add("alert","alert-danger");
             infos[i].innerText="veuiller remplir ce champ";
-            inputs[i].style.border="1px solid red";
+            input[i].style.border="1px solid red";
             pointeur++;
         }
         

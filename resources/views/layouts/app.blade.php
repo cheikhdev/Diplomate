@@ -161,31 +161,17 @@
 		<!-- End Topbar -->
 		<div class="middle-inner">
 			<div class="container">
-				<div class="row">
-					<div class="col-7 col-md-3 cart-mobile">
+				<div class="d-flex justify-content-between">
+					
+					<div class="cart-mobile">
 						<!-- Logo -->
-						<div class="mobile-nav" style="margin-top:15px;"></div>
-						<div class="logo" style="height:50px;">
-							<a href="/"><img src="{{asset('images/logo.jpg')}}" alt="logo" class="img-logo" ></a>
-						</div>
-						<!--/ End Logo -->
-						<!-- Search Form --->
-						
-						<!-- End Search Form -->
-					</div>
-					<div class="col-2 col-md-6 " style="">
-						<div class="search-bar-top w-100 ">
-							<div class="search-bar w-100">
-								<form action="{{route('products.search')}}" class="w-100">
-									<input type="text" name="q" class="form-control " placeholder="Recherche de Produits" value="{{ request()->q ?? '' }}" style="width:90%;">
-									<a href="{{('partials.search')}}" class="w-20"><button class="btnn"><i class="fas fa-search"></i></button></a>
-								</form>
+							<div class="logo" style="height:50px;">
+								<a href="/"><img src="{{asset('images/logo.jpg')}}" alt="logo" class="img-logo" ></a>
 							</div>
-						</div>
-						<div class="search-top  rechercher">
-							<div class="top-search mt-3"><a href="#0"><i class="fas fa-search"></i></a></div>
+							<div class="search-top  rechercher">
+							<div class="top-search"><a href="#0"><i class="fas fa-search"></i></a></div>
 							<!-- Search Form -->
-							<div class="search-top" >
+							<div class="search-top">
 								<form class="search-form" action="{{route('products.search')}}">
 									<input type="text" placeholder="Recherche de produits...." name="q" value="{{ request()->q ?? '' }}">
 									<a href="{{('partials.search')}}" class="w-20"><button class="btnn"><i class="fas fa-search"></i></button></a>
@@ -193,8 +179,22 @@
 							</div>
 							<!-- End Search Form -->
 						</div>
+						<!--/ End Logo -->
+						<!-- Search Form --->
+						<!-- End Search Form -->
 					</div>
-					<div class="col-3 col-md-3 ">
+					<div class="" style="">
+					<div class="search-bar-top w-100 ">
+							<div class="search-bar w-100">
+								<form action="{{route('products.search')}}" class="w-100">
+									<input type="text" name="q" class="form-control " placeholder="Recherche de Produits" value="{{ request()->q ?? '' }}" style="width:90%;">
+									<a href="{{('partials.search')}}" class="w-20"><button class="btnn"><i class="fas fa-search"></i></button></a>
+								</form>
+							</div>
+						</div>
+						
+					</div>
+					<div class="">
 						<div class="right-bar">
 							<div class="sinlge-bar shopping">
 								<div class="poper">
@@ -256,6 +256,7 @@
 						</div>
 						
 					</div>
+					<div class="mobile-nav" style="margin-top:15px;"></div>
 				</div>
 			</div>
 		</div>
@@ -636,7 +637,6 @@
 	
 <!-- Jquery --> 
 <!--script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script!-->
-<script src="{{asset('js/js_home/controle-forme.js')}}"></script>
 <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -678,6 +678,7 @@
 	<script src="{{asset('js/js_home/class_active.js')}}"></script>
 	<!--script src="{{asset('js/js_home/add_cart.js')}}"></script-->
 	<script src="{{asset('js/js_home/commande.js')}}"></script>
+	<script src="{{asset('js/js_home/controle-forme.js')}}"></script>
 	<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<script href="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 	
