@@ -165,7 +165,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="shop-section-title">
-                      <h1  style="color:white;">Sous-Categorie Ciment
+                      <h1  style="color:white;">Maçonnerie > Gravier
                       </h1>
                     </div>
                   </div>

@@ -12,6 +12,8 @@
 */
 use Illuminate\Support\Facades\Route;
 // liste des tache pour sous categories
+Route::get('/','HomeController@index');
+
 Route::get('/affiche_sous_categorie','ProductsController@affichage_souscategorie')->middleware('can:admin');
 
 Route::get('/listesouscategorie','ProductsController@liste_souscategorie')->middleware('can:admin');
@@ -110,11 +112,15 @@ Route::get('/electricite/protection', "HomeController@protection");
 //Route::get('/acc', "ProductsController@acc");
 
 // LES PAGES DE PRESENTATIONS
+
+Route::get('/welcome','HomeController@index1');
+Auth::routes(['verify' => true]);
+Route::get('','HomeController@index');
 Route::get('/apropos', 'HomeController@propos');
 Route::get('/actu', 'HomeController@actu');
 Route::get('/mention', 'HomeController@mention');
 Route::get('/cgv', 'HomeController@cgv');
-Route::get('/cgu', 'HomeController@cgv');
+Route::get('/cgu-cgv', 'HomeController@cgu');
 Route::get('/partenaire', 'HomeController@parte');
 Route::get('/inco', 'HomeController@inco');
 Route::get('/ingelec', 'HomeController@ingelec');

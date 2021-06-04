@@ -11,8 +11,8 @@
                     <form action="{{route('editer_produit',['id'=>$product->id])}}" method="post" enctype="multipart/form-data">
 
 
-  						 		@csrf
-   								@method('patch')
+                                @csrf
+                                @method('patch')
                                 @if($errors->any())
                                 @foreach($errors->all() as $error)
                                 <div class="alert alert-danger">{{$error}}</div>
@@ -35,6 +35,43 @@
                                                 <input type="text" name="prix_product" id="prix_product" class="form-control" placeholder="Le prix du produit">
                                             </div>
                                       </div>
+                                </div>
+                                <div class="form-group col-8 ">
+                                        <label for="sexe" class=" " style="color:red;">Proprietaire</label>
+                                        <div class="col-8">
+                                            <select name="property_id" id="property_id" class="form-control">
+                                                <option value=""></option>
+                                                @foreach($properties as $key => $value)
+                                                <option value="{{$key}}">{{$value}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                <div class="form-group col-8 ">
+                                        <label for="sexe" class=" " style="color:red;">Categorie</label>
+                                        <div class="col-8">
+                                            <select name="category_id" id="category_id" class="form-control">
+                                                <option value=""></option>
+                                                @foreach($categories as $key => $value)
+                                                <option value="{{$key}}">{{$value}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">   
+                                    <div class="form-group col-8 ">
+                                        <label for="sexe" class=" " style="color:red;">Sous categorie</label>
+                                        <div class="col-8">
+                                            <select name="sous_category_id" id="sous_category_id" class="form-control">
+                                                <option value=""></option>
+                                                @foreach($sous_category as $key => $value)
+                                                <option value="{{$key}}">{{$value}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-10 ">

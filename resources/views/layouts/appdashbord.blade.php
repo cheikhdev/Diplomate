@@ -61,7 +61,7 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand bg-white">
-              <a href="/admin/dashbord">
+              <a href="">
                 <img src="{{asset('images/logo.jpg')}}" alt="">
                 <span class="brand-name"></span>
               </a>

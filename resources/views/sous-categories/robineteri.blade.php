@@ -161,7 +161,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="shop-section-title">
-                      <h1  style="color:white;">Sous-Categorie Robineterie
+                      <h1  style="color:white;">Maçonnerie > Robineterie
                       </h1>
                     </div>
                   </div>

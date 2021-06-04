@@ -171,7 +171,7 @@
 										<div class="owl-carousel popular-slider" style="padding:1px;">
 											<!-- Start Single Product -->
 											@foreach($products as $product)
-												@if($product->category->name_category == "maçonnerie" || $product->category->name_category == "peinture")
+												
 												<div class="single-list mr-3 bg-white">
 													<div class="row">
 														<div class="col-lg-6 col-md-6 col-12">
@@ -203,7 +203,7 @@
 														</div>
 													</div>
 												</div>
-												@endif
+												
 												
 											@endforeach
 											<!-- End Single Product -->
@@ -225,7 +225,7 @@
 									<div class="col-12">
 										<div class="owl-carousel popular-slider" style="padding:1px;">
 										@foreach($products as $product)
-												@if($product->category->name_category == "sanitaire" || $product->category->name_category == "plomberie")
+												
 												<div class="single-list mr-3 bg-white">
 													<div class="row">
 														<div class="col-lg-6 col-md-6 col-12">
@@ -257,7 +257,7 @@
 														</div>
 													</div>
 												</div>
-												@endif
+												
 												
 											@endforeach
 											<!-- End Single Product -->
@@ -280,7 +280,7 @@
 										<div class="owl-carousel popular-slider" style="padding:1px;">
 										<!-- Start Single Product -->
 										@foreach($products as $product)
-												@if($product->category->name_category == "electricite")
+												
 												<div class="single-list mr-3 bg-white">
 													<div class="row">
 														<div class="col-lg-6 col-md-6 col-12">
@@ -312,7 +312,6 @@
 														</div>
 													</div>
 												</div>
-												@endif
 												
 											@endforeach
 											<!-- End Single Product -->

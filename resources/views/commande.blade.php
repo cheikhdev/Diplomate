@@ -79,23 +79,23 @@
                             @csrf
                             <div class="row ">
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="text" required=""  id="nom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="nom"  value="{{Auth::user()->client->nom_client}}">
+                                    <input type="text" required=""  id="nom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="nom" value="{{Auth::user()->client->nom_client}}" >
                                 </div>
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="text" required="" id="prenom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="prenom"  value="{{Auth::user()->client->prenom_client}}" >
+                                    <input type="text" required="" id="prenom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="prenom"   >
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="email" required="" id="email" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="email" value="{{Auth::user()->email}}">
+                                    <input type="email" required="" id="email" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="email" >
                                 </div>
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="text" required="" id="phone" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="phone" value="{{Auth::user()->client->telephone_client}}" >
+                                    <input type="text" required="" id="phone" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="phone"  >
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="col-sm-12 col-md-10 mb-3">
-                                    <input type="text" required="" id="adresse" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="adresse" value="{{Auth::user()->client->adresse_client}}">
+                                    <input type="text" required="" id="adresse" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="adresse" >
                                 </div>
                             </div>
                             <div class="" id="infoChamps">
@@ -155,7 +155,7 @@
                                     <div class="card-body">
                                         <form action="#" class="mb-5" id="formLiv">
                                             <div class="mb-5 d-flex">
-                                                <input type="checkbox" class=" mr-2" style="height:10px;width:10px;" name="livMagazin" id="livMagazin">
+                                                <input type="checkbox" class=" mr-2" name="livMagazin" id="livMagazin">
                                                 <h6>Retirer la commande au magazin</h6>
                                             </div>
                                             <div class="d-flex">
@@ -258,7 +258,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="mb-5 d-flex">
-                                            <input type="checkbox" class=" mr-2" style="height:10px;width:10px;" name="PaieLiv" id="PaieLiv">
+                                            <input type="checkbox" class=" mr-2"  name="PaieLiv" id="PaieLiv">
                                             <h6>Payer à la livraison</h6>
                                         </div>
                                         <div class="d-flex">

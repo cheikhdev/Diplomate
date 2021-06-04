@@ -7,8 +7,14 @@
         <section class="container" style="height:auto">
           <div class="row h-auto my-5">
               <div class="col-sm-12 col-md-6">
+                 
+                  <div id="myImg"><img  class="img-fluid rounded " src="{{$product->image_product ? asset($product->image_product) : asset('uploads/images/default.png')}}" alt="" style="height:100% !important;width:80%"></div>
+                  <p>
+      
+      <button type="button" onclick="agrandir()">+ Agrandir L'image</button>
+      <button type="button" onclick="diminuer()">- Diminuer L'image</button>
 
-                  <img class="img-fluid rounded " src="{{$product->image_product ? asset($product->image_product) : asset('uploads/images/default.png')}}" alt="" style="height:100% !important;width:80%">
+    </p>
               </div>
               <div class="col-sm-12 col-md-6" style="height:auto "> 
                   <div class="h-100 show-info" >
@@ -52,4 +58,8 @@
         <style>
           
         </style>
+        <script>
+      
+       
+    </script>
     @endsection
