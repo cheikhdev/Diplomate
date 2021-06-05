@@ -290,7 +290,7 @@
                                 </div>
                         </div>
                         <div class="d-flex justify-content-around">
-                            <button id="retourlivraison" class="" >Retour a la livraison</button>
+                            <button id="retourlivraison" class="" >Retour á la livraison</button>
                             <button id="valider" type="submit" class="">Valider </button>
                         </div>
                     </div>
