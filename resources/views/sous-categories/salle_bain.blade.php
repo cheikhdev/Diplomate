@@ -161,7 +161,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="shop-section-title">
-                      <h1  style="color:white;">Sous-Categorie Salle de bain
+                      <h1  style="color:white;">Maçonnerie > Salle de bain
                       </h1>
                     </div>
                   </div>

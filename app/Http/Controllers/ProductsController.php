@@ -86,7 +86,7 @@ public function pagecategory(){
   }
     public function index(){
       $products = Product::all();
-      return view('home', compact('products'));
+      return view('products.index', compact('products'));
    }
    public function vendeur1(){
       $property = Category::orderBy('created_at')->get();
@@ -270,8 +270,19 @@ public function edit($id)
   // $this->authorize('admin');
    // Editons les produits 
    $product = \App\Product::find($id);
+  
+      $categories = \App\Category::pluck('name_category','id');
+      $properties = \App\Property::pluck('name_property','id');
+      $sous_category = Sous_Category::pluck('name','id');
+  
+   
+      
+      
+   
+   
+
    //$categories = \App\Category::pluck('name_category','id');
-   return view('products.edit', compact('product'));
+   return view('products.edit', compact('product', 'categories','properties','sous_category'));
 }
 public function update1(Request $request,$id)
     {

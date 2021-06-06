@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use App\Client;
 use App\User;
-class UsersController extends Controller
+class UsersController extends Controller implements MustVerifyEmail
 {
     public function store(Request $request)
     {  
@@ -38,7 +40,7 @@ class UsersController extends Controller
        $user->password=Hash::make($request->input('password'));
        $user->save();
       $verif=User::find($user->id);
-       //Auth::login($user);
+      //Auth::login($user);
          if($verif){
             return back()->with('success_info' , 'Compte créer avec succès, Veuiller utiliser votre login et mot de passe pour vous connecter');
          }
@@ -47,7 +49,4 @@ class UsersController extends Controller
          }
       
     }
-    
-  
-}
-
+    }

@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button >Vider le pannier</button>
+                        <a class="btn btn-info" href="/finish_cart" style="font-weight: bold;">Commander</a>
                     </div> 
                 </div>	
                 <div id="display_item"></div>

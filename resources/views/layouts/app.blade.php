@@ -244,7 +244,9 @@
 												</div>
 											</div>
 											<div class="d-flex justify-content-center">
-												<button >Vider le pannier</button>
+											
+
+												<a class="btn btn-info" href="/finish_cart" style="font-weight: bold;">Commander</a>
 											</div> 
 										</div>	
 										<div id="display_item"></div>
@@ -325,12 +327,12 @@
 										<div class="nav-inner" id="bare">	
 											<ul class="nav main-menu menu navbar-nav" id="" style="font-size:16px;">
 												
-													<li id="acceuil" class=""><a href="{{url('/')}}" style="">acceuil</a></li>
+													<li id="acceuil" class=""><a href="{{url('/')}}" style="">accueil</a></li>
 													<li id="propos" class=""><a href="{{url('/apropos')}}" class="">A propos<i class="fas fa-angle-down"></i></a>
 														<ul class="dropdown">
 															<li><a href="/mention">Mention légale</a></li>
-															<li><a href="/cgu">Conditions générales d'utilisations</a></li>
-															<li><a href="/cgv">Conditions générales de vente</a></li>
+															<li><a href="/cgu-cgv">Conditions générales d'utilisations et de ventes</a></li>
+															
 															<li><a href="/contact">Contact</a></li>
 															
 														</ul>
@@ -368,7 +370,7 @@
 	
     
 	<div class="p-2">
-	<marquee><h3 style="width: 67%;background:white;color:#BE1E2D;">Bienvenue a Matcosen , la plateforme e-quincaillerie.</h3></marquee>
+	<marquee><h3 style="width: 67%;background:white;color:#BE1E2D;">Site en phase de conception ... </h3></marquee>
 	</div>
 	<!--/ End Header -->
 	<!-- Single Slider -->
@@ -530,7 +532,7 @@
 												<button type="submit" style="width:150px;border-radius:50px;height:30px !important;background:#191348; color:white;" class="">Enregistrer</button>
 												<button type="reset" style="width:150px;border-radius:50px;height:30px !important;background:#BE1E2D; color:white;" class="" data-dismiss="modal">Annuler</button>
 											</div>
-											<span  style="font-weight: bold;">En vous inscrivant vous accepterez les conditions<br> citaient dans :<a href="/mention" style="color:#BE1E2D;font-weight: bold; ">Mentions Légales </a>, <a href="/cgu" style="color:#BE1E2D;font-weight: bold;">CGU</a> et <a href="/cgv" style="color:#BE1E2D;font-weight: bold;" >CGV</a></span>
+											<span  style="font-weight: bold;">En vous inscrivant vous accepterez les conditions<br> citées dans :<a href="/mention" style="color:#BE1E2D;font-weight: bold; ">Mentions Légales </a> . <a href="/cgu-cgv" style="color:#BE1E2D;font-weight: bold;"></a></span>
 										</form>
 										<div class="d-flex justify-content-center mt-5">
 											<a href="#" data-toggle="modal" data-target="#Modal_inscription" class="redirect-login" style=""> <i class="fas fa-user-lock fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i> Se connecter</a>
@@ -551,11 +553,11 @@
 						<!-- Single Widget -->
 						<div class="single-footer about">
 							<div class="logo">
-								<a href="/home"><img src="{{asset('images/logo-bas.PNG')}}" style="" width="280px" height="399px"></a>
+								<a href="/home"><img src="{{asset('images/footer.png')}}" style="" width="250px" height="650px"></a>
 							</div>
-							<p class="text ml-3" style="font: bold;">      Bienvenue a Matcosen votre quincailerie<br> digitale de reference 
+							<p class="text ml-1" style="font: bold;">      Bienvenue a Matcosen votre quincailerie<br> digitale de reference 
 							.</p>
-							<p class="call ml-3">      Question? Appeler 24/7<span><a href="tel:123456789">     +221 77 478 19 07</a></span></p>
+							<p class="call ml-1">      Question? Appeler 24/7<span><a class="call ml-1" href="tel:123456789">     +221 77 478 19 07</a></span></p>
 						</div>
 						<!-- End Single Widget -->
 					</div>

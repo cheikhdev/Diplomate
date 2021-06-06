@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use App\Product;
 use App\Category;
 use App\Contact;
@@ -22,21 +23,21 @@ class HomeController extends Controller
     public function ciment(){
       $ciment = Product::where('name_product', 'like', "%ciment%")
                   
-                  ->paginate(6);
+                  ->paginate(12);
       $product = \App\Product::All();
       return view('sous-categories.ciment', compact('product','ciment'));
     }
      public function fer(){
      $fer = Product::where('name_product', 'like', "%fer%")
                 
-                ->paginate(6);
+                ->paginate(12);
      $product = \App\Product::All();
     return view('sous-categories.fer', compact('product','fer'));
 }
 public function gravier(){
      $gravier = Product::where('name_product', 'like', "%gravier%")
                 
-                ->paginate(6);
+                ->paginate(12);
      $product = \App\Product::All();
     return view('sous-categories.gravier', compact('product','gravier'));
 }
@@ -44,7 +45,7 @@ public function gravier(){
      public function pinceau(){
      $pinceau = Product::where('name_product', 'like', "%pinceau%")
                 
-                ->paginate(6);
+                ->paginate(12);
      $product = \App\Product::All();
     return view('sous-categories.pinceau', compact('product',''));
 }
@@ -52,14 +53,14 @@ public function gravier(){
      public function salle_bain(){
      $salle_bain = Product::where('name_product', 'like', "%salle_bain%")
                 
-                ->paginate(6);
+                ->paginate(12);
      $product = \App\Product::All();
     return view('sous-categories.salle_bain', compact('product','salle_bain'));
     }
     public function robineterie(){
       $robineterie = Product::where('name_product', 'like', "%robineterie%")
                  
-                 ->paginate(6);
+                 ->paginate(12);
       $product = \App\Product::All();
      return view('sous-categories.robineteri', compact('product','robineterie'));
  }
@@ -68,7 +69,7 @@ public function gravier(){
   public function eclairage(){
     $eclairage = Product::where('name_product', 'like', "%eclairage%")
                
-               ->paginate(6);
+               ->paginate(12);
     $product = \App\Product::All();
     return view('sous-categories.eclairage', compact('product','eclairage'));
   }
@@ -77,7 +78,7 @@ public function gravier(){
   public function cablage(){
     $cablage = Product::where('name_product', 'like', "%cablage%")
                
-               ->paginate(6);
+               ->paginate(12);
     $product = \App\Product::All();
     return view('sous-categories.cablage', compact('product','cablage'));
   }
@@ -86,7 +87,7 @@ public function gravier(){
   public function appareillage(){
     $appareillage = Product::where('name_product', 'like', "%appareillage%")
                
-               ->paginate(6);
+               ->paginate(12);
     $product = \App\Product::All();
    return view('sous-categories.appareillage', compact('product','appareillage'));
   }
@@ -95,7 +96,7 @@ public function gravier(){
   public function protection(){
     $protection = Product::where('name_product', 'like', "%protection%")
                
-               ->paginate(6);
+               ->paginate(12);
     $product = \App\Product::All();
     return view('sous-categories.protection', compact('product','protection'));
   }
@@ -104,6 +105,7 @@ public function gravier(){
 
 
     public function index(){
+         $Category=Category::All();
          $categories=Category::where('id' , 1)->get();
          $TotalMacon = DB::table('products')->whereIn('category_id', [1])->count();
          $TotalSanitaire_plomberie = DB::table('products')->whereIn('category_id', [2])->count();
@@ -113,7 +115,7 @@ public function gravier(){
           $produit1 = \App\Product::orderBy('created_at', 'DESC')->get();
          $products = DB::table('products')->paginate(6);//paginate(6);
           $product = \App\Product::All();
-        return view('home', compact('products','categories','TotalMacon','TotalSanitaire_plomberie','TotalPeinture','TotalElectricite','product','produit1'));
+        return view('home', compact('Category','products','categories','TotalMacon','TotalSanitaire_plomberie','TotalPeinture','TotalElectricite','product','produit1'));
     }
      // page des cathegopries
     public function macon(){
@@ -177,7 +179,9 @@ public function gravier(){
      }
       
  
-
+public function index1() {
+      return view('welcome');
+    }
   public function actu() {
       return view('pages.actu');
     }

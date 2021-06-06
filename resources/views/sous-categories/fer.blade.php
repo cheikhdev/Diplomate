@@ -161,7 +161,7 @@
                 <div class="row">
                   <div class="col-12">
                     <div class="shop-section-title">
-                      <h1  style="color:white;">Sous-Categorie Fer
+                      <h1  style="color:white;">Maçonnerie > Fer
                       </h1>
                     </div>
                   </div>
