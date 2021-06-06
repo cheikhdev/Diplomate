@@ -9,7 +9,6 @@ let suiv = document.getElementById('suivantbtn1');
 
 let inputs= [nom,prenom,email,phone,adresse];
 let infoChamps = document.getElementById('infoChamps');
-let check=document.getElementById('check');
 let autre_address = document.getElementById('autre_address');
 let commande = document.getElementById("commande");
 let commander = document.getElementById("commander");
@@ -37,14 +36,7 @@ let livraison = document.getElementById("livraison");
 
 let retourfacture = document.getElementById("retourfacture");
 
-check.addEventListener('click',function(){
-    if(check.checked==true){
-        autre_address.style.display="block";
-    }
-    else{
-        autre_address.style.display="none";
-    }
-});
+
 /*if(check.clicked==true){
     autre_address.style.display="none";
 }
@@ -57,8 +49,8 @@ for(let i=0;i<inputs.length; i++){
     });
 }
 
-suiv.addEventListener('click', function(e){
-    e.preventDefault();
+suiv.addEventListener('click', function(){
+    //e.preventDefault();
     if(nom.value=="" || prenom.value=="" || email.value=="" || phone.value=="" || adresse.value==""){
         infoChamps.innerText="Veuiller renseigner tous les champs";
         infoChamps.classList.add("alert","alert-danger");
@@ -187,13 +179,47 @@ document.getElementById("retourlivraison").addEventListener('click', function(){
 });
 
 valider.addEventListener('click', function(){
-    if (document.getElementById("PaieLigne").checked==false && document.getElementById("PaieLiv").checked==false) {
+    if (document.getElementById("PaieLigne").checked==true || document.getElementById("PaieLiv").checked==true) {
+        if (document.getElementById("PaieLigne").checked==true) {
+            $('form.add-to-order').submit(function (e) {
+                e.preventDefault();
+                var form_data = $(this).serialize(); alert(form_data);
+                $.ajax({
+                  type: "POST",
+                  url: '/purchase',
+                  data: form_data,
+                  success: function success(data) {
+                    if (data.success) {
+                        
+                    } else {
+                      console.log("il y une erreur");
+                    }
+                  }
+                });
+              });
+        }
+        else{
+            $('form.add-to-order').submit(function (e) {
+                var form_data = $(this).serialize(); 
+                alert(form_data);
+                $.ajax({
+                  type: "POST",
+                  url: '/add_order',
+                  data: form_data,
+                  success: function success(data) {
+                    if (data.success) {
+                        
+                    } else {
+                      console.log("il y une erreur");
+                    }
+                  }
+                });
+              });
+        }
+    }
+    else {
         document.getElementById("infoModePaie").innerText="Veuiller selectionner un mode de paiement";
         document.getElementById("infoModePaie").classList.add("alert","alert-danger");
-    }
-    else if (document.getElementById("PaieLigne").checked==true && document.getElementById("PaieLiv").checked==false) {
-        document.getElementById('purchase').submit();
-    } else {
         
     }
 })

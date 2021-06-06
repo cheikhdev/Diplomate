@@ -75,9 +75,9 @@
                     </div>
                     <div class="container mt-5" id="facturation">
                         <h4 class="mb-3 details">Details de facturation</h4>
-                        <form class="w-100" action="#" id="form" method="post">
+                        <form class="w-100" action="#" class="add-to-order">
                             @csrf
-                            <div class="row ">
+                            <div class="row">
                                 <div class="col-sm-12 col-md-6 mb-3">
                                     <input type="text" required=""  id="nom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="nom"  value="{{Auth::user()->client->nom_client}}">
                                 </div>
@@ -101,46 +101,13 @@
                             <div class="" id="infoChamps">
 
                             </div>
-                            <div class="row mb-5">
-                                <div class="">
-                                    <label for="" style="font-weight:bold;color:red;"> Expedier dans une autre adresse</label>
-                                    <div class="d-flex">
-                                        <div>
-                                            <input type="checkbox" selected="false" style="width:20px;height:20px;" id="check"  class="form-control mr-5" name="check" > OUI
-                                        </div>
-                                       
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div id="autre_address" style="display:none;">
-                                <div class="row mb-5">
-                                    <div class="col-12 col-md-6">
-                                        <input type="text" required=""  id="nom2" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-50" name="nom2" placeholder="Nom*">
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <input type="text" required="" id="prenom2" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-50" name="prenom2" placeholder="Prénom*">
-                                    </div>
-                                </div>
-                                <div class="row mb-5">
-                                    <div class="col-12 col-md-6">
-                                        <input type="email" required="" id="email2" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-50" name="email2" placeholder="E-mail*">
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <input type="text" required="" id="phone2" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-50" name="phone2" placeholder="Numéro de Téléphone*">
-                                    </div>
-                                </div>
-                                <div class="row mb-5">
-                                    <div class="col-12 col-md-6">
-                                        <input type="text" required="" id="adresse2" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-50" name="adresse2" placeholder="Adresse*">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                            <button class="" ><a href="/panier" style="font-weight:bold;">Retour au panier</a></button>
-                            <button id="suivantbtn1" type="submit"  class="suivant">Suivant</button>
-                        </div>
+                            <div class="m-2"><h6 style="color:red;">Veuiller modifier l'adresse si vous voulez l'expédier dans une autre adresse, Merci !!!</h6> </div>
+                            
                         </form>
+                            <div class="d-flex justify-content-between">
+                                <button class="" ><a href="/panier" style="font-weight:bold;">Retour au panier</a></button>
+                                <button id="suivantbtn1"  class="suivant">Suivant</button>
+                            </div>
                         
                     </div>
                     
@@ -251,7 +218,7 @@
                     </div>
                     <div class="mt-5" id="paiement" style="display:none;">
                         <h4 class="mb-3 details">Choix type de paiement</h4>
-                        <div class="mb-5">
+                            <div class="mb-5">
                                 <div class="card">
                                     <div class="card-header">
                                         <h5 class="mb-5 mt-4 d-flex justify-content-center" >Veuiller selectionner votre type de paiement</h5>
@@ -264,22 +231,6 @@
                                         <div class="d-flex">
                                             <input type="checkbox" class=" mr-2" name="PaieLigne" id="PaieLigne">
                                             <h6>Payer en ligne (orange money, wave, free money, dunyapay, carte ...)</h6>
-                                            <form action="/purchase" method="post" id="purchase">
-                                                @csrf
-                                                <input type="hidden" id="nom_client" value="" name="nom_client">
-                                                <input type="hidden" value="" id="prenom_client" name="prenom_client">
-                                                <input type="hidden" value="" id="email_client" name="email_client">
-                                                <input type="hidden" value="" id="phone_client" name="phone_client">
-                                                <input type="hidden" value="" id="adresse_client" name="adresse_client">
-                                            </form>
-                                            <form action="/add_order" method="post" id="add_order">
-                                                @csrf
-                                                <input type="hidden" id="nom_client" value="" name="nom_client">
-                                                <input type="hidden" value="" id="prenom_client" name="prenom_client">
-                                                <input type="hidden" value="" id="email_client" name="email_client">
-                                                <input type="hidden" value="" id="phone_client" name="phone_client">
-                                                <input type="hidden" value="" id="adresse_client" name="adresse_client">
-                                            </form>
                                         </div>
                                     </div>
                                     <div class="card-footer">
@@ -288,7 +239,7 @@
                                         </div>
                                     </div>
                                 </div>
-                        </div>
+                            </div>
                         <div class="d-flex justify-content-around">
                             <button id="retourlivraison" class="" >Retour a la livraison</button>
                             <button id="valider" type="submit" class="">Valider </button>

@@ -66,30 +66,31 @@ class FormulesController extends Controller
 
     public function add_order(Request $request){
         $order = new \App\Order();
-            $num_order= date('Y')."".rand(0,9999999)."_MCSN";
-                do{
-                    $order_numero=Order::where('num_order',$num_order)->get();
-                    if(isset($order_numero->id)){
-                        $num_order= date('Y')."".rand(0,9999999)."_MCSN";
-                    }
+        $num_order= date('Y')."".rand(0,9999999)."_MCSN";
+            do{
+                $order_numero=Order::where('num_order',$num_order)->get();
+                if(isset($order_numero->id)){
+                    $num_order= date('Y')."".rand(0,9999999)."_MCSN";
                 }
-                while(isset($order_numero->id)); 
-            $num_order = $num_order;
-            $nom_client = $request->input('nom_client');
-            $prenom_client = $request->input('prenom_client');
-            $adresse_client = $request->input('adresse_client');
-            $num_tel = $request->input('phone_client');
-            $user_id = Auth::user()->id;
-            $prix_total = Cart::total();
-            $order = \App\Order::updateOrCreate(["num_order" => $num_order, "nom_client" => $nom_client, "prenom_client" => $prenom_client, "Adresse_client" => $adresse_client, "num_tel" => $num_tel, "user_id" => $user_id, "prix_total" => $prix_total]);
-
-            foreach(Cart::content() as $row) {
-                $prod=Product::where('name_product',$row->name)->first();
-                
-                $order->product()->attach($prod);
             }
-        return redirect();
-    }
+            while(isset($order_numero->id)); 
+        $num_order = $num_order;
+        $nom_client = $request->input('nom_client');
+        $prenom_client = $request->input('prenom_client');
+        $adresse_client = $request->input('adresse_client');
+        $num_tel = $request->input('phone_client');
+        $user_id = Auth::user()->id;
+        $prix_total = Cart::total();
+        $order = \App\Order::updateOrCreate(["num_order" => $num_order, "nom_client" => $nom_client, "prenom_client" => $prenom_client, "Adresse_client" => $adresse_client, "num_tel" => $num_tel, "user_id" => $user_id, "prix_total" => $prix_total]);
+        
+
+        foreach(Cart::content() as $row) {
+            $prod=Product::where('name_product',$row->name)->first();
+            
+            $order->product()->attach($prod);
+        }
+        return redirect("/my-order");
+}
 
     public function cancel_payment()
     { 

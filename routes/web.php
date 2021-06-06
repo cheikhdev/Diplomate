@@ -151,6 +151,8 @@ Route::get('/admin', 'SessionsController@admin');
 // urls paydunya
 Route::post("/purchase",'FormulesController@purchase')->name("purchase");
 
+Route::post("/add_order", 'FormulesController@add_order')->name("add_order");
+
 Route::get('/success_payment/{numorder}', 'FormulesController@success_payment')->name('success_payment');
 Route::get('/cancel_payment', 'FormulesController@cancel_payment')->name('cancel_payment');
 
