@@ -244,9 +244,7 @@
 												</div>
 											</div>
 											<div class="d-flex justify-content-center">
-											
-
-												<a class="btn btn-info" href="/finish_cart" style="font-weight: bold;">Commander</a>
+												<button><a href="/finish_cart" style="font-weight: bold;">Commander</a></button>
 											</div> 
 										</div>	
 										<div id="display_item"></div>
@@ -463,7 +461,7 @@
 					
 				</div>
 				<div class="modal-body container">
-				<form action="{{route('ajouter_user')}}" method="post" id="inscription">
+				<form action="{{ route('ajouter_user') }}" method="post" id="inscription">
 											@csrf 
 											<div class="row">
 												<div class="form-group col-12">
@@ -639,11 +637,13 @@
 	
 <!-- Jquery --> 
 <!--script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script!-->
+
 <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
-<script src="{{asset('js/app.js')}}"></script>   
+<script src="{{asset('js/app.js')}}"></script>
+ 
 <script src="{{asset('js/js_home/jquery.min.js')}}"></script>
     <script src="{{asset('js/js_home/jquery-migrate-3.0.0.js')}}"></script>
     <script src="{{asset('js/js_home/jquery-ui.min.js')}}"></script>
@@ -681,6 +681,7 @@
 	<!--script src="{{asset('js/js_home/add_cart.js')}}"></script-->
 	<script src="{{asset('js/js_home/commande.js')}}"></script>
 	<script src="{{asset('js/js_home/controle-forme.js')}}"></script>
+	
 	<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<script href="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 	

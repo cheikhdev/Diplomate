@@ -7,6 +7,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Client;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -49,7 +51,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'nom' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             
@@ -63,13 +65,20 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
+        $client = new Client();
+        $client->nom_client = $request->input('nom');
+        $client->prenom_client = $request->input('prenom');
+        $client->telephone_client = $request->input('phone');
+        $client->adresse_client = $request->input('adresse');
+        $client->save();
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'name' => $client->prenom_client,
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
             'roles' => 'users',
+            'client_id' => $client->id,
         ]);
     }
 }

@@ -40,10 +40,10 @@ class FormulesController extends Controller
                 }
                 while(isset($order_numero->id)); 
             $num_order = $num_order;
-            $nom_client = $request->input('nom_client');
-            $prenom_client = $request->input('prenom_client');
-            $adresse_client = $request->input('adresse_client');
-            $num_tel = $request->input('phone_client');
+            $nom_client = $request->input('nomLigne');
+            $prenom_client = $request->input('prenomLigne');
+            $adresse_client = $request->input('adresseLigne');
+            $num_tel = $request->input('phoneLigne');
             $user_id = Auth::user()->id;
             $prix_total = Cart::total();
             $order = \App\Order::updateOrCreate(["num_order" => $num_order, "nom_client" => $nom_client, "prenom_client" => $prenom_client, "Adresse_client" => $adresse_client, "num_tel" => $num_tel, "user_id" => $user_id, "prix_total" => $prix_total]);
@@ -75,10 +75,10 @@ class FormulesController extends Controller
             }
             while(isset($order_numero->id)); 
         $num_order = $num_order;
-        $nom_client = $request->input('nom_client');
-        $prenom_client = $request->input('prenom_client');
-        $adresse_client = $request->input('adresse_client');
-        $num_tel = $request->input('phone_client');
+        $nom_client = $request->input('nomMaison');
+        $prenom_client = $request->input('prenomMaison');
+        $adresse_client = $request->input('adresseMaison');
+        $num_tel = $request->input('phoneMaison');
         $user_id = Auth::user()->id;
         $prix_total = Cart::total();
         $order = \App\Order::updateOrCreate(["num_order" => $num_order, "nom_client" => $nom_client, "prenom_client" => $prenom_client, "Adresse_client" => $adresse_client, "num_tel" => $num_tel, "user_id" => $user_id, "prix_total" => $prix_total]);

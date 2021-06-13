@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use App\Client;
 use App\User;
-class UsersController extends Controller implements MustVerifyEmail
+class UsersController extends Controller
 {
     public function store(Request $request)
     {  

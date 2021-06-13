@@ -82,20 +82,20 @@
                                     <input type="text" required=""  id="nom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="nom" value="{{Auth::user()->client->nom_client}}" >
                                 </div>
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="text" required="" id="prenom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="prenom"   >
+                                    <input type="text" required="" id="prenom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="prenom"   value="{{Auth::user()->client->prenom_client}}">
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="email" required="" id="email" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="email" >
+                                    <input type="email" required="" id="email" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="email" value="{{Auth::user()->email}}">
                                 </div>
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="text" required="" id="phone" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="phone"  >
+                                    <input type="text" required="" id="phone" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="phone"  value="{{Auth::user()->client->telephone_client}}">
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="col-sm-12 col-md-10 mb-3">
-                                    <input type="text" required="" id="adresse" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="adresse" >
+                                    <input type="text" required="" id="adresse" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="adresse" value="{{Auth::user()->client->adresse_client}}">
                                 </div>
                             </div>
                             <div class="" id="infoChamps">
@@ -234,9 +234,10 @@
                                         </div>
                                     </div>
                                     <div class="card-footer">
-                                        <div id="infoModePaie" class="">
+                                        <div id="infoModePaie" class="mb-2">
                                         
                                         </div>
+                                        <h6 class="text-center" style="color:red;font-weight:bold;"><i class="fas fa-lock m-2"></i>paimement 100% sécurisé</h6>
                                     </div>
                                 </div>
                             </div>
@@ -248,5 +249,22 @@
                 </div>
             </div>
         </div>
+        <form action="/purchage" method="post" id="add-to-orderLigne">
+            @csrf
+            <input type="hidden" id="nomLigne" name="nomLigne" value="">
+            <input type="hidden" id="prenomLigne" name="prenomLigne" value="">
+            <input type="hidden" id="emailLigne" name="emailLigne" value="">
+            <input type="hidden" id="adresseLigne" name="adresseLigne" value="">
+            <input type="hidden" id="phoneLigne" name="phoneLigne" value="">
+        </form>
+
+        <form action="/add_order" method="post" id="add-to-orderMaison">
+            @csrf
+            <input type="hidden" id="nomMaison" name="nomMaison" value="">
+            <input type="hidden" id="prenomMaison" name="prenomMaison" value="">
+            <input type="hidden" id="emailMaison" name="emailMaison" value="">
+            <input type="hidden" id="adresseMaison" name="adresseMaison" value="">
+            <input type="hidden" id="phoneMaison" name="phoneMaison" value="">
+        </form>
         
     @endsection

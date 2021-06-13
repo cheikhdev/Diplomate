@@ -181,40 +181,22 @@ document.getElementById("retourlivraison").addEventListener('click', function(){
 valider.addEventListener('click', function(){
     if (document.getElementById("PaieLigne").checked==true || document.getElementById("PaieLiv").checked==true) {
         if (document.getElementById("PaieLigne").checked==true) {
-            $('form.add-to-order').submit(function (e) {
-                e.preventDefault();
-                var form_data = $(this).serialize(); alert(form_data);
-                $.ajax({
-                  type: "POST",
-                  url: '/purchase',
-                  data: form_data,
-                  success: function success(data) {
-                    if (data.success) {
-                        
-                    } else {
-                      console.log("il y une erreur");
-                    }
-                  }
-                });
-              });
+            document.getElementById('nomLigne').value=nom.value;
+            document.getElementById('prenomLigne').value=prenom.value;
+            document.getElementById('phoneLigne').value=phone.value;
+            document.getElementById('adresseLigne').value=adresse.value;
+            document.getElementById('emailLigne').value=email.value;
+
+            document.getElementById('add-to-orderLigne').submit();
         }
         else{
-            $('form.add-to-order').submit(function (e) {
-                var form_data = $(this).serialize(); 
-                alert(form_data);
-                $.ajax({
-                  type: "POST",
-                  url: '/add_order',
-                  data: form_data,
-                  success: function success(data) {
-                    if (data.success) {
-                        
-                    } else {
-                      console.log("il y une erreur");
-                    }
-                  }
-                });
-              });
+            document.getElementById('nomMaison').value=nom.value;
+            document.getElementById('prenomMaison').value=prenom.value;
+            document.getElementById('phoneMaison').value=phone.value;
+            document.getElementById('adresseMaison').value=adresse.value;
+            document.getElementById('emailMaison').value=email.value;
+
+            document.getElementById('add-to-orderMaison').submit();
         }
     }
     else {
