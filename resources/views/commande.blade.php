@@ -79,23 +79,25 @@
                             @csrf
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="text" required=""  id="nom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="nom" value="{{Auth::user()->client->nom_client}}" >
+                                    <input type="text" required=""  id="nom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="nom" value="{{Auth::user()->client->nom_client ?? "" }}" >
                                 </div>
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="text" required="" id="prenom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="prenom"   value="{{Auth::user()->client->prenom_client}}">
+                                    <input type="text" required="" id="prenom" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="prenom"   value="{{Auth::user()->client->prenom_client?? "" }}" >
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="email" required="" id="email" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="email" value="{{Auth::user()->email}}">
+                                    <input type="email" required="" id="email" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="email" value="{{Auth::user()->email?? "" }}" >
                                 </div>
                                 <div class="col-sm-12 col-md-6 mb-3">
-                                    <input type="text" required="" id="phone" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="phone"  value="{{Auth::user()->client->telephone_client}}">
+                                    <input type="text" required="" id="phone" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="phone"  value="{{Auth::user()->client->telephone_client?? 
+                                    "" }}" >
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="col-sm-12 col-md-10 mb-3">
-                                    <input type="text" required="" id="adresse" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="adresse" value="{{Auth::user()->client->adresse_client}}">
+                                    <input type="text" required="" id="adresse" style="border:1px solid  #F7941D;background:rgb(231, 225, 225);border-radius:10px;" class="form-control w-100" name="adresse" value="{{Auth::user()->client->adresse_client?? "" 
+                                }}" >
                                 </div>
                             </div>
                             <div class="" id="infoChamps">

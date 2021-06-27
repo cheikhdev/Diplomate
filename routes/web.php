@@ -112,7 +112,9 @@ Route::get('/electricite/protection', "HomeController@protection");
 //Route::get('/acc', "ProductsController@acc");
 
 // LES PAGES DE PRESENTATIONS
-
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
 Route::get('/welcome','HomeController@index1');
 Auth::routes(['verify' => true]);
 Route::get('','HomeController@index');

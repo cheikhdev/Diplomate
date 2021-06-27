@@ -9,9 +9,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+
 use App\Client;
 use App\User;
-class UsersController extends Controller
+class UsersController extends Controller implements Authenticatable,
+                                                    MustVerifyEmail
 {
     public function store(Request $request)
     {  
